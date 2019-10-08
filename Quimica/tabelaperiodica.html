@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../AppliedKnowledge.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="tabelascript.js"></script>
+
+	<title>Tabela Periódica</title>
+	<style >
+*{
+	font-family: 'Lato', sans-serif;
+}
+body {
+	background-image: url('tabelabg.png');
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+	</style>
+</head>
+<body style="margin:0px">
+	<div style="background:white">
+	<div class="logo" style="background-color:white;"> <!--Div pra centralizar o logo-->
+		<img id="img"src="atomic.svg" style="width: 100px;height: 100px; padding-top:10px;" ><!--LOGO DO ATOMO-->
+	</div>
+
+	<div class="menul" id="menu" id="top" style="margin-top: 20px; margin-bottom:30px;"><!--Menu de navegação, Ira aparecer quando qualquer um dos botoes	for pressionado-->
+		<ul style="padding-top:16px; text-align: center;" >
+			<li><a href="../Pagina Inicial/page_v3.html"class="botao link1"><p>Home</p></a></li>
+			<li><a href="../Quimica/tabelaperiodica.html"class="botao link2"><p>Quimica</p></a></li>
+			<li><a href="../Biologia/biologia.html" class="botao link3"><p>Biologia</p></a></li>
+			<li><a href="../Matematica/matematica.html" class="botao link4"><p>Matematica</p></a></li>
+
+			<div class="menudrop">
+				<div class="dropdown" style="text-align: center">
+				<button class="drp" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<img src="menu.svg" style="padding-bottom: 10px;" width="53" height="37">
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<li><a class="dropdown-item" href="../Pagina Inicial/page_v3.html"class="botao link1"><p>Home</p></a></li>
+					<div class="dropdown-divider"></div>
+					<li><a class="dropdown-item" href="../Quimica/tabelaperiodica.html"class="botao link2"><p>Quimica</p></a></li>
+					<li><a class="dropdown-item" href="../Biologia/biologia.html" class="botao link3"><p>Biologia</p></a></li>
+					<li><a class="dropdown-item" href="../Matematica/matematica.html" class="botao link4"><p>Matematica</p></a></li>
+				</div>
+			</div>
+			</div>
+		</ul>
+	</div>
+	</div>
+	<h1 class="titulo">Tabela Periódica</h1>
+	<p class="subtitlegrupo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRUPO</p>
+
+<!--Pop-up com as informações dos elementos ao clicar------------->
+
+	<div class="infoelemento">
+		<h1 class="titulo-info"></h1>
+		<!-- Imagem com as camadas eletrônicas (à esquerda do pop-up) -->
+		<div class="content-left-info">
+			<p>Representação atômica</p>
+			<img src="" alt="" id="atom-image-info" width="250px"> <!-- Não possui src pois é gerado no Js -->
+		</div>
+		<!-- Tabela de informações-->
+		<p>Informações</p>
+			<div class="informacoes-info" >
+				<div class="descricao-info">Número Atômico: </div>
+				<div class="descricao-info">Massa: </div>
+				<div class="descricao-info">Densidade:</div>
+				<div class="descricao-info">Eletronegatividade:</div>
+				<div class="descricao-info">Raio Atômico:</div>
+				<div class="descricao-info">Ano de descobrimento:</div>
+				<div class="descricao-info">Ponto de fusão:</div>
+				<div class="descricao-info">Ponto de ebulição:</div>
+				<div class="descricao-info">Configuração eletrônica:</div>
+				<div class="descricao-info" style="border-bottom: 1px solid black">Elétrons em cada camada:</div>
+			</div>
+			<!-- Todas informações abaixo são preenchidas pelo Js de acordo com o elemento clicado -->
+			<div class="informacoes-info2" >
+				<div class="descricao-info numeroatm-info"></div>
+				<div class="descricao-info numeromassa-info"></div>
+				<div class="descricao-info densidade-info"></div>
+				<div class="descricao-info eletronegatividade-info"></div>
+				<div class="descricao-info raio-info"></div>
+				<div class="descricao-info ano-info"></div>
+				<div class="descricao-info fusao-info"></div>
+				<div class="descricao-info ebulicao-info"></div>
+				<div class="descricao-info eletronica-info"></div>
+				<div class="descricao-info camadaeletrons-info" style="border-bottom: 1px solid black"></div>
+			</div>
+			<!-- Imagem do elemento (à direita do pop-up) -->
+			<div class="content-right-info">
+				<p>Representação Gráfica</p>
+				<img src="" id="imagem-info">
+			</div>
+	</div>
+
+<!--Tabela periódica-->
+	<div class="tabela">
+		<div >
+			<div data='2' class="periodo">1</div>
+			<div data='3' class="periodo">2</div>
+			<div data='4' class="periodo">3</div>
+			<div data='5' class="periodo">4</div>
+			<div data='6' class="periodo">5</div>
+			<div data='7' class="periodo">6</div>
+			<div data='8' class="periodo">7</div>
+		</div>
+
+		<!--Coluna 1-->
+		<div class="coluna" >
+
+		<p class="grupo">1</p>
+			<div class="elemento naometais" >
+				<span class="numero">1</span>
+				<span class="massa">1,01</span>
+				<p class="simbolo">H</p>
+				<p class="nome nomemaior">Hidrogênio</p>
+				<p class="massamenor">1,01</p>
+
+				<div style="display:none;">
+					<div class="densidade">0,09</div>
+					<div class="eletronegatividade">2,2</div>
+					<div class="raio">53 pm</div>
+					<div class="ano">1766</div>
+					<div class="fusao">-259</div>
+					<div class="ebulicao">-253</div>
+					<div class="eletronica">1s1</div>
+					<div class="camadaeletrons">1|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+
+			<div class="elemento metaisalc">
+				<span class="numero">3</span>
+				<span class="massa">6,94</span>
+				<p class="simbolo">Li</p>
+				<p class="nome">Lítio</p>
+				<p class="massamenor">6,94</p>
+
+				<div style="display:none;">
+					<div class="densidade">535</div>
+					<div class="eletronegatividade">0,98</div>
+					<div class="raio">152 pm</div>
+					<div class="ano">1817</div>
+					<div class="fusao">180,5</div>
+					<div class="ebulicao">1330</div>
+					<div class="eletronica">2s2</div>
+					<div class="camadaeletrons">2|1|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaisalc">
+				<span class="numero">11</span>
+				<span class="massa">22,99</span>
+				<p class="simbolo">Na</p>
+				<p class="nome">Sódio</p>
+				<p class="massamenor">22,99</p>
+				<div style="display:none;">
+					<div class="densidade">968</div>
+					<div class="eletronegatividade">0,93</div>
+					<div class="raio">1,86 pm</div>
+					<div class="ano">1807</div>
+					<div class="fusao">97,79</div>
+					<div class="ebulicao">882,8</div>
+					<div class="eletronica">3s1</div>
+					<div class="camadaeletrons">2|8|1|&nbsp;|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaisalc">
+				<span class="numero">19</span>
+				<span class="massa">39,10</span>
+				<p class="simbolo">K</p>
+				<p class="nome">Potássio</p>
+				<p class="massamenor">39,10</p>
+				<div style="display:none;">
+					<div class="densidade">856</div>
+					<div class="eletronegatividade">0,82</div>
+					<div class="raio">280 pm</div>
+					<div class="ano">1807</div>
+					<div class="fusao">63,5</div>
+					<div class="ebulicao">758,8</div>
+					<div class="eletronica">4s1</div>
+					<div class="camadaeletrons">2|8|8|1|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaisalc">
+				<span class="numero">37</span>
+				<span class="massa">85,47</span>
+				<p class="simbolo">Rb</p>
+				<p class="nome">Rubídio</p>
+				<p class="massamenor">85,47</p>
+				<div style="display:none;">
+					<div class="densidade">1532</div>
+					<div class="eletronegatividade">0,82</div>
+					<div class="raio">248 pm</div>
+					<div class="ano">1861</div>
+					<div class="fusao">39,3</div>
+					<div class="ebulicao">688</div>
+					<div class="eletronica">5s1</div>
+					<div class="camadaeletrons">2|8|18|8|1|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaisalc">
+				<span class="numero">55</span>
+				<span class="massa">132,91</span>
+				<p class="simbolo">Cs</p>
+				<p class="nome">Césio</p>
+				<p class="massamenor">132,91</p>
+				<div style="display:none;">
+					<div class="densidade">1879</div>
+					<div class="eletronegatividade">0,79</div>
+					<div class="raio">298 pm</div>
+					<div class="ano">1860</div>
+					<div class="fusao">28,44</div>
+					<div class="ebulicao">670,8</div>
+					<div class="eletronica">6s1</div>
+					<div class="camadaeletrons">2|8|18|18|8|1|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaisalc">
+				<span class="numero">87</span>
+				<span class="massa">223,00</span>
+				<p class="simbolo">Fr</p>
+				<p class="nome">Frâncio</p>
+				<p class="massamenor">223,00</p>
+				<div style="display:none;">
+					<div class="densidade">535</div>
+					<div class="eletronegatividade">0,79</div>
+					<div class="raio">348 pm</div>
+					<div class="ano">1939</div>
+					<div class="fusao">27</div>
+					<div class="ebulicao">676,8</div>
+					<div class="eletronica">7s1</div>
+					<div class="camadaeletrons">2|8|18|32|18|8|1</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Coluna 2-->
+		<div class="coluna">
+		<p class="grupo">2</p>
+			<div class="elemento" style="visibility: hidden;">
+			</div>
+			<div class="elemento metaisalcterrosos">
+				<span class="numero">4</span>
+				<span class="massa">9,01</span>
+				<p class="simbolo">Be</p>
+				<p class="nome">Berílio</p>
+				<p class="massamenor">9,01</p>
+				<div style="display:none;">
+					<div class="densidade">1848</div>
+					<div class="eletronegatividade">1,57</div>
+					<div class="raio">112 pm</div>
+					<div class="ano">1798</div>
+					<div class="fusao">1287</div>
+					<div class="ebulicao">2970</div>
+					<div class="eletronica">2s2</div>
+					<div class="camadaeletrons">2|2|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaisalcterrosos">
+				<span class="numero">12</span>
+				<span class="massa">24,30</span>
+				<p class="simbolo">Mg</p>
+				<p class="nome nomemaior">Magnésio</p>
+				<p class="massamenor">24,30</p>
+				<div style="display:none;">
+					<div class="densidade">1738</div>
+					<div class="eletronegatividade">1,31</div>
+					<div class="raio">173 pm</div>
+					<div class="ano">1755</div>
+					<div class="fusao">650</div>
+					<div class="ebulicao">1091</div>
+					<div class="eletronica">3s2</div>
+					<div class="camadaeletrons">2|8|2|&nbsp;|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaisalcterrosos">
+				<span class="numero">20</span>
+				<span class="massa">40,08</span>
+				<p class="simbolo">Ca</p>
+				<p class="nome">Cálcio</p>
+				<p class="massamenor">40,08</p>
+				<div style="display:none;">
+					<div class="densidade">1550</div>
+					<div class="eletronegatividade">1</div>
+					<div class="raio">231 pm</div>
+					<div class="ano">1808</div>
+					<div class="fusao">842</div>
+					<div class="ebulicao">1484</div>
+					<div class="eletronica">4s2</div>
+					<div class="camadaeletrons">2|8|8|2|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaisalcterrosos">
+				<span class="numero">38</span>
+				<span class="massa">87,62</span>
+				<p class="simbolo">Sr</p>
+				<p class="nome">Estrôncio</p>
+				<p class="massamenor">87,62</p>
+				<div style="display:none;">
+					<div class="densidade">2630</div>
+					<div class="eletronegatividade">0,95</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1790</div>
+					<div class="fusao">777</div>
+					<div class="ebulicao">1382</div>
+					<div class="eletronica">5s2</div>
+					<div class="camadaeletrons">2|8|18|8|2|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaisalcterrosos">
+				<span class="numero">56</span>
+				<span class="massa">137,33</span>
+				<p class="simbolo">Ba</p>
+				<p class="nome">Bário</p>
+				<p class="massamenor">137,33</p>
+				<div style="display:none;">
+					<div class="densidade">3510</div>
+					<div class="eletronegatividade">0,89</div>
+					<div class="raio">268 pm</div>
+					<div class="ano">1808</div>
+					<div class="fusao">727</div>
+					<div class="ebulicao">1897</div>
+					<div class="eletronica">6s2</div>
+					<div class="camadaeletrons">2|8|18|18|8|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaisalcterrosos">
+				<span class="numero">88</span>
+				<span class="massa">226</span>
+				<p class="simbolo">Ra</p>
+				<p class="nome">Rádio</p>
+				<p class="massamenor">226</p>
+				<div style="display:none;">
+					<div class="densidade">5500</div>
+					<div class="eletronegatividade">0,89</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1898</div>
+					<div class="fusao">696</div>
+					<div class="ebulicao">1737</div>
+					<div class="eletronica">7s2</div>
+					<div class="camadaeletrons">2|8|18|32|18|8|2</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Coluna 3-->
+		<div class="coluna">
+		<p class="grupo">3</p>
+			<div class="elemento" style="visibility: hidden;">
+			</div>
+			<div class="elemento" style="visibility: hidden;">
+			</div>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">21</span>
+				<span class="massa">44,96</span>
+				<p class="simbolo">Sc</p>
+				<p class="nome">Escândio</p>
+				<p class="massamenor">44,96</p>
+				<div style="display:none;">
+					<div class="densidade">1550</div>
+					<div class="eletronegatividade">1,36</div>
+					<div class="raio">230 pm</div>
+					<div class="ano">1879</div>
+					<div class="fusao">1541</div>
+					<div class="ebulicao">2836</div>
+					<div class="eletronica">3d1 4s2</div>
+					<div class="camadaeletrons">2|8|9|2|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">39</span>
+				<span class="massa">88,91</span>
+				<p class="simbolo">Y</p>
+				<p class="nome">Ítrio</p>
+				<p class="massamenor">88,91</p>
+				<div style="display:none;">
+					<div class="densidade">4472</div>
+					<div class="eletronegatividade">1,22</div>
+					<div class="raio">180 pm</div>
+					<div class="ano">1794</div>
+					<div class="fusao">1526</div>
+					<div class="ebulicao">3338</div>
+					<div class="eletronica">4d1 5s2</div>
+					<div class="camadaeletrons">2|8|18|9|2|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento lantanideos" data='0'>
+				<p class="numcoluna3">57-71</p>
+			</div>
+			<div class="elemento actinidios " data='0'>
+				<p class="numcoluna3" >89-103</p>
+			</div>
+		</div>
+
+		<!--Coluna 4-->
+		<div class="coluna">
+		<p class="grupo">4</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">22</span>
+				<span class="massa">47,86</span>
+				<p class="simbolo">Ti</p>
+				<p class="nome">Titânio</p>
+				<p class="massamenor">47,86</p>
+				<div style="display:none;">
+					<div class="densidade">4507</div>
+					<div class="eletronegatividade">1,54</div>
+					<div class="raio">147 pm</div>
+					<div class="ano">1791</div>
+					<div class="fusao">1668</div>
+					<div class="ebulicao">3287</div>
+					<div class="eletronica">3d2 4s2</div>
+					<div class="camadaeletrons">2|8|10|2|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">40</span>
+				<span class="massa">91,22</span>
+				<p class="simbolo">Zr</p>
+				<p class="nome">Zircônio</p>
+				<p class="massamenor">91,22</p>
+				<div style="display:none;">
+					<div class="densidade">6511</div>
+					<div class="eletronegatividade">1,33</div>
+					<div class="raio">230 pm</div>
+					<div class="ano">1789</div>
+					<div class="fusao">1855</div>
+					<div class="ebulicao">4409</div>
+					<div class="eletronica">4d2 5s2</div>
+					<div class="camadaeletrons">2|8|18|10|2|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">72</span>
+				<span class="massa">178,49</span>
+				<p class="simbolo">Hf</p>
+				<p class="nome">Háfnio</p>
+				<p class="massamenor">178,49</p>
+				<div style="display:none;">
+					<div class="densidade">13310</div>
+					<div class="eletronegatividade">1,3</div>
+					<div class="raio">225 pm</div>
+					<div class="ano">1923</div>
+					<div class="fusao">2233</div>
+					<div class="ebulicao">4602</div>
+					<div class="eletronica">4f14 5d2 6s2</div>
+					<div class="camadaeletrons">2|8|18|32|10|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">104</span>
+				<span class="massa">267</span>
+				<p class="simbolo">Rf</p>
+				<p class="nome nomemaior">Rutherfórdio</p>
+				<p class="massamenor">267</p>
+				<div style="display:none;">
+					<div class="densidade">23000</div>
+					<div class="eletronegatividade">--</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1964</div>
+					<div class="fusao">2477</div>
+					<div class="ebulicao">5526</div>
+					<div class="eletronica">5f14 6d2 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|32|10|2</div>
+				</div>
+			</div>
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">57</span>
+				<span class="massa">138,91</span>
+				<p class="simbolo">La</p>
+				<p class="nome">Lantânio</p>
+				<p class="massamenor">138,91</p>
+
+				<div style="display:none;">
+					<div class="densidade">6,14</div>
+					<div class="eletronegatividade">1,1</div>
+					<div class="raio">250 pm</div>
+					<div class="ano">1839</div>
+					<div class="fusao">920 °C</div>
+					<div class="ebulicao">3.464 °C</div>
+					<div class="eletronica">5d1 6s2</div>
+					<div class="camadaeletrons">2|8|18|18|9|2|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">89</span>
+				<span class="massa">227</span>
+				<p class="simbolo">Ac</p>
+				<p class="nome">Actínio</p>
+				<p class="massamenor">227</p>
+
+				<div style="display:none;">
+					<div class="densidade">10,1</div>
+					<div class="eletronegatividade">1,1</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1899</div>
+					<div class="fusao">1.050 °C</div>
+					<div class="ebulicao">3.197 °C</div>
+					<div class="eletronica">6d1 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|18|9|2|</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 5-->
+
+		<div class="coluna">
+		<p class="grupo">5</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">23</span>
+				<span class="massa">50,942</span>
+				<p class="simbolo">V</p>
+				<p class="nome">Vanádio</p>
+				<p class="massamenor">50,942</p>
+				<div style="display:none;">
+					<div class="densidade">6110</div>
+					<div class="eletronegatividade">1,63</div>
+					<div class="raio">205 pm</div>
+					<div class="ano">1801</div>
+					<div class="fusao">1910</div>
+					<div class="ebulicao">3407</div>
+					<div class="eletronica">3d3 4s2</div>
+					<div class="camadaeletrons">2|8|11|2|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">41</span>
+				<span class="massa">92,906</span>
+				<p class="simbolo">Nb</p>
+				<p class="nome">Nióbio</p>
+				<p class="massamenor">92,906</p>
+				<div style="display:none;">
+					<div class="densidade">8570</div>
+					<div class="eletronegatividade">1,6</div>
+					<div class="raio">146 pm</div>
+					<div class="ano">1801</div>
+					<div class="fusao">2477</div>
+					<div class="ebulicao">4927</div>
+					<div class="eletronica">4d4 5s1</div>
+					<div class="camadaeletrons">2|8|18|12|1|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">73</span>
+				<span class="massa">180,95</span>
+				<p class="simbolo">Ta</p>
+				<p class="nome">Tântalo</p>
+				<p class="massamenor">180,95</p>
+				<div style="display:none;">
+					<div class="densidade">16650</div>
+					<div class="eletronegatividade">1,5</div>
+					<div class="raio">220 pm</div>
+					<div class="ano">1802</div>
+					<div class="fusao">3017</div>
+					<div class="ebulicao">5457</div>
+					<div class="eletronica">4f14 5d3 6s2</div>
+					<div class="camadaeletrons">2|8|18|32|11|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">105</span>
+				<span class="massa">268</span>
+				<p class="simbolo">Db</p>
+				<p class="nome">Dúbnio</p>
+				<p class="massamenor">268</p>
+				<div style="display:none;">
+					<div class="densidade">29000</div>
+					<div class="eletronegatividade">--</div>
+					<div class="raio">139 pm</div>
+					<div class="ano">1967</div>
+					<div class="fusao">2999</div>
+					<div class="ebulicao">5699</div>
+					<div class="eletronica">5f14 6d3 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|32|11|2</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">58</span>
+				<span class="massa">140,12</span>
+				<p class="simbolo">Ce</p>
+				<p class="nome">Cério</p>
+				<p class="massamenor">140,12</p>
+				<div style="display:none;">
+					<div class="densidade">6689</div>
+					<div class="eletronegatividade">1,12</div>
+					<div class="raio">248 pm</div>
+					<div class="ano">1803</div>
+					<div class="fusao">795</div>
+					<div class="ebulicao">3443</div>
+					<div class="eletronica">4f1 5d1 6s2</div>
+					<div class="camadaeletrons">2|8|18|20|8|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">90</span>
+				<span class="massa">232,04</span>
+				<p class="simbolo">Th</p>
+				<p class="nome">Tório</p>
+				<p class="massamenor">232,04</p>
+				<div style="display:none;">
+					<div class="densidade">11724</div>
+					<div class="eletronegatividade">1,3</div>
+					<div class="raio">240 pm</div>
+					<div class="ano">1828</div>
+					<div class="fusao">1750</div>
+					<div class="ebulicao">4787</div>
+					<div class="eletronica">6d2 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|18|10|2</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 6-->
+
+		<div class="coluna">
+		<p class="grupo">6</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">24</span>
+				<span class="massa">51,99</span>
+				<p class="simbolo">Cr</p>
+				<p class="nome">Crômio</p>
+				<p class="massamenor">51,99</p>
+				<div style="display:none;">
+					<div class="densidade">7200</div>
+					<div class="eletronegatividade">1,66</div>
+					<div class="raio">128 pm</div>
+					<div class="ano">1797</div>
+					<div class="fusao">1907</div>
+					<div class="ebulicao">2672</div>
+					<div class="eletronica">3d5 4s1</div>
+					<div class="camadaeletrons">2|8|13|1|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">42</span>
+				<span class="massa">95,95</span>
+				<p class="simbolo">Mo</p>
+				<p class="nome nomemaior">Molibdênio</p>
+				<p class="massamenor">95,95</p>
+				<div style="display:none;">
+					<div class="densidade">10280</div>
+					<div class="eletronegatividade">2,16</div>
+					<div class="raio">139 pm</div>
+					<div class="ano">1778</div>
+					<div class="fusao">2623</div>
+					<div class="ebulicao">4639</div>
+					<div class="eletronica">4d5 5s1</div>
+					<div class="camadaeletrons">2|8|18|13|1|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">74</span>
+				<span class="massa">183,84</span>
+				<p class="simbolo">W</p>
+				<p class="nome">Tugstênio</p>
+				<p class="massamenor">183,84</p>
+				<div style="display:none;">
+					<div class="densidade">19250</div>
+					<div class="eletronegatividade">2,36</div>
+					<div class="raio">210 pm</div>
+					<div class="ano">1781</div>
+					<div class="fusao">3422</div>
+					<div class="ebulicao">5555</div>
+					<div class="eletronica">4f14 5d4 6s2</div>
+					<div class="camadaeletrons">2|8|18|32|12|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">106</span>
+				<span class="massa">269</span>
+				<p class="simbolo">Sg</p>
+				<p class="nome nomemaior">Seabórgio</p>
+				<p class="massamenor">269</p>
+				<div style="display:none;">
+					<div class="densidade">35000</div>
+					<div class="eletronegatividade">--</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1974</div>
+					<div class="fusao">--</div>
+					<div class="ebulicao">--</div>
+					<div class="eletronica">5f14 6d4 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|32|12|2</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">59</span>
+				<span class="massa">140,91</span>
+				<p class="simbolo">Pr</p>
+				<p class="nome nomemaior">Praseodímio</p>
+				<p class="massamenor">140,91</p>
+				<div style="display:none;">
+					<div class="densidade">6640</div>
+					<div class="eletronegatividade">1,13</div>
+					<div class="raio">247 pm</div>
+					<div class="ano">1885</div>
+					<div class="fusao">935</div>
+					<div class="ebulicao">3512</div>
+					<div class="eletronica">4f3 6s2</div>
+					<div class="camadaeletrons">2|8|18|21|8|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">91</span>
+				<span class="massa">231,04</span>
+				<p class="simbolo">Pa</p>
+				<p class="nome nomemaior">Protactínio</p>
+				<p class="massamenor">231,04</p>
+				<div style="display:none;">
+					<div class="densidade">15370</div>
+					<div class="eletronegatividade">1,5</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1913</div>
+					<div class="fusao">1568</div>
+					<div class="ebulicao">4027</div>
+					<div class="eletronica">5f2 6d1 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|20|9|2</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 7-->
+
+		<div class="coluna">
+		<p class="grupo">7</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">25</span>
+				<span class="massa">54,93</span>
+				<p class="simbolo">Mn</p>
+				<p class="nome">Manganês</p>
+				<p class="massamenor">54,93</p>
+				<div style="display:none;">
+					<div class="densidade">7470</div>
+					<div class="eletronegatividade">1,55</div>
+					<div class="raio">127 pm</div>
+					<div class="ano">1774</div>
+					<div class="fusao">1246</div>
+					<div class="ebulicao">2061</div>
+					<div class="eletronica">3d5 4s2</div>
+					<div class="camadaeletrons">2|8|13|2|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">43</span>
+				<span class="massa">98</span>
+				<p class="simbolo">Tc</p>
+				<p class="nome">Tecnécio</p>
+				<p class="massamenor">98</p>
+				<div style="display:none;">
+					<div class="densidade">11500</div>
+					<div class="eletronegatividade">1,9</div>
+					<div class="raio">205 pm</div>
+					<div class="ano">1937</div>
+					<div class="fusao">2157</div>
+					<div class="ebulicao">4265</div>
+					<div class="eletronica">4d5 5s2</div>
+					<div class="camadaeletrons">2|8|18|13|2|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">75</span>
+				<span class="massa">186,21</span>
+				<p class="simbolo">Re</p>
+				<p class="nome">Rênio</p>
+				<p class="massamenor">186,21</p>
+				<div style="display:none;">
+					<div class="densidade">21020</div>
+					<div class="eletronegatividade">1,9</div>
+					<div class="raio">205 pm</div>
+					<div class="ano">1925</div>
+					<div class="fusao">3185</div>
+					<div class="ebulicao">5597</div>
+					<div class="eletronica">4f14 5d5 6s2</div>
+					<div class="camadaeletrons">2|8|18|32|13|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">107</span>
+				<span class="massa">270</span>
+				<p class="simbolo">Bh</p>
+				<p class="nome">Bóhrio</p>
+				<p class="massamenor">270</p>
+				<div style="display:none;">
+					<div class="densidade">37000</div>
+					<div class="eletronegatividade">--</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1981</div>
+					<div class="fusao">--</div>
+					<div class="ebulicao">--</div>
+					<div class="eletronica">5f14 6d5 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|32|13|2</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">60</span>
+				<span class="massa">144,24</span>
+				<p class="simbolo">Nd</p>
+				<p class="nome nomemaior">Neodímio</p>
+				<p class="massamenor">144,24</p>
+
+				<div style="display:none;">
+					<div class="densidade">6,80</div>
+					<div class="eletronegatividade">1,14</div>
+					<div class="raio">229 pm</div>
+					<div class="ano">1885</div>
+					<div class="fusao">1.016 °C</div>
+					<div class="ebulicao">3.074 °C</div>
+					<div class="eletronica">4f4 6s2</div>
+					<div class="camadaeletrons">2|8|18|22|8|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">92</span>
+				<span class="massa">238,03</span>
+				<p class="simbolo">U</p>
+				<p class="nome">Urânio</p>
+				<p class="massamenor">238,03</p>
+				<div style="display:none;">
+					<div class="densidade">19</div>
+					<div class="eletronegatividade">1,3</div>
+					<div class="raio">230 pm</div>
+					<div class="ano">1789</div>
+					<div class="fusao">1.132 °C</div>
+					<div class="ebulicao">4.131 °C</div>
+					<div class="eletronica">7s2 5f3 6d1</div>
+					<div class="camadaeletrons">2|8|18|32|21|9|2</div>
+				</div>
+			</div>
+
+		</div>
+		<!--Coluna 8-->
+
+		<div class="coluna">
+		<p class="grupo">8</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">26</span>
+				<span class="massa">55,84</span>
+				<p class="simbolo">Fe</p>
+				<p class="nome">Ferro</p>
+				<p class="massamenor">55,84</p>
+				<div style="display:none;">
+					<div class="densidade">7.874</div>
+					<div class="eletronegatividade">1,83</div>
+					<div class="raio">140 pm</div>
+					<div class="ano">4000 a.C.</div>
+					<div class="fusao">1.538</div>
+					<div class="ebulicao">2.862</div>
+					<div class="eletronica">3d6 4s2</div>
+					<div class="camadaeletrons">2|8|14|2|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">44</span>
+				<span class="massa">101,07</span>
+				<p class="simbolo">Ru</p>
+				<p class="nome">Rutênio</p>
+				<p class="massamenor">101,07</p>
+				<div style="display:none;">
+					<div class="densidade">12.370</div>
+					<div class="eletronegatividade">2,3</div>
+					<div class="raio">205 pm</div>
+					<div class="ano">1844</div>
+					<div class="fusao">2.334</div>
+					<div class="ebulicao">4.150</div>
+					<div class="eletronica">4d7 5s1</div>
+					<div class="camadaeletrons">2|8|18|15|1|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">76</span>
+				<span class="massa">190,23</span>
+				<p class="simbolo">Os</p>
+				<p class="nome">Ósmio</p>
+				<p class="massamenor">190,23</p>
+				<div style="display:none;">
+					<div class="densidade">22.610</div>
+					<div class="eletronegatividade">2,2</div>
+					<div class="raio">130 pm</div>
+					<div class="ano">1803</div>
+					<div class="fusao">3.033</div>
+					<div class="ebulicao">5.027</div>
+					<div class="eletronica">4f14 5d6 6s2</div>
+					<div class="camadaeletrons">2|8|18|32|14|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">108</span>
+				<span class="massa">277</span>
+				<p class="simbolo">Hs</p>
+				<p class="nome">Hássio</p>
+				<p class="massamenor">269</p>
+				<div style="display:none;">
+					<div class="densidade">41.000</div>
+					<div class="eletronegatividade">--</div>
+					<div class="raio">126 pm</div>
+					<div class="ano">1984</div>
+					<div class="fusao">--</div>
+					<div class="ebulicao">--</div>
+					<div class="eletronica"> 5f14 6d6 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|32|14|2</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">61</span>
+				<span class="massa">145</span>
+				<p class="simbolo">Pm</p>
+				<p class="nome nomemaior">Promércio</p>
+				<p class="massamenor">145</p>
+				<div style="display:none;">
+					<div class="densidade">7.264</div>
+					<div class="eletronegatividade">1,13</div>
+					<div class="raio">185 pm</div>
+					<div class="ano">1914</div>
+					<div class="fusao">1.042</div>
+					<div class="ebulicao">3.000</div>
+					<div class="eletronica"> 4f5 6s2</div>
+					<div class="camadaeletrons">2|8|18|23|8|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">93</span>
+				<span class="massa">237</span>
+				<p class="simbolo">Np</p>
+				<p class="nome" >Netúnio</p>
+				<p class="massamenor">237</p>
+				<div style="display:none;">
+					<div class="densidade">20.250</div>
+					<div class="eletronegatividade">1,36</div>
+					<div class="raio">155 pm</div>
+					<div class="ano">1940</div>
+					<div class="fusao">644</div>
+					<div class="ebulicao">3.902</div>
+					<div class="eletronica"> 7s2 6d1 5f4</div>
+					<div class="camadaeletrons">2|8|18|32|22|9|2</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 9-->
+
+		<div class="coluna">
+		<p class="grupo">9</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">27</span>
+				<span class="massa">58,993</span>
+				<p class="simbolo">Co</p>
+				<p class="nome">Cobalto</p>
+				<p class="massamenor">58,993</p>
+				<div style="display:none;">
+					<div class="densidade">8.900</div>
+					<div class="eletronegatividade">1,88</div>
+					<div class="raio">126 pm</div>
+					<div class="ano">1735</div>
+					<div class="fusao">1.495</div>
+					<div class="ebulicao">2.870</div>
+					<div class="eletronica">3d7 4s2</div>
+					<div class="camadaeletrons">2|8|15|2|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">45</span>
+				<span class="massa">102,91</span>
+				<p class="simbolo">Rh</p>
+				<p class="nome">Ródio</p>
+				<p class="massamenor">102,91</p>
+				<div style="display:none;">
+					<div class="densidade">12.450</div>
+					<div class="eletronegatividade">2,28</div>
+					<div class="raio">134 pm</div>
+					<div class="ano">1803</div>
+					<div class="fusao">1.964</div>
+					<div class="ebulicao">3.697</div>
+					<div class="eletronica"> 5s1 4d8</div>
+					<div class="camadaeletrons">2|8|18|16|1|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">77</span>
+				<span class="massa">192,22</span>
+				<p class="simbolo">Ir</p>
+				<p class="nome">Irídio</p>
+				<p class="massamenor">192,22</p>
+				<div style="display:none;">
+					<div class="densidade">22.650</div>
+					<div class="eletronegatividade">2,2</div>
+					<div class="raio">135 pm</div>
+					<div class="ano">1803</div>
+					<div class="fusao">2.466</div>
+					<div class="ebulicao">4.130</div>
+					<div class="eletronica">4f14 5d7 6s2</div>
+					<div class="camadaeletrons">2|8|18|32|15|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">109</span>
+				<span class="massa">278</span>
+				<p class="simbolo">Mt</p>
+				<p class="nome nomemaior">Meitnério</p>
+				<p class="massamenor">278</p>
+				<div style="display:none;">
+					<div class="densidade">37.400</div>
+					<div class="eletronegatividade">--</div>
+					<div class="raio">122 pm</div>
+					<div class="ano">1982</div>
+					<div class="fusao">--</div>
+					<div class="ebulicao">--</div>
+					<div class="eletronica"> 5f14 6d7 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|32|15|2</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">62</span>
+				<span class="massa">150,36</span>
+				<p class="simbolo">Sm</p>
+				<p class="nome">Samário</p>
+				<p class="massamenor">150,36</p>
+				<div style="display:none;">
+					<div class="densidade">7353</div>
+					<div class="eletronegatividade">1,17</div>
+					<div class="raio">180 pm</div>
+					<div class="ano">1879</div>
+					<div class="fusao">1.072</div>
+					<div class="ebulicao">1.794</div>
+					<div class="eletronica">6s2 4f6</div>
+					<div class="camadaeletrons">2|8|18|24|8|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">94</span>
+				<span class="massa">244</span>
+				<p class="simbolo">Pu</p>
+				<p class="nome" >Plutônio</p>
+				<p class="massamenor">244</p>
+				<div style="display:none;">
+					<div class="densidade">19.816</div>
+					<div class="eletronegatividade">1,28</div>
+					<div class="raio">159 pm</div>
+					<div class="ano">1940</div>
+					<div class="fusao">639,4</div>
+					<div class="ebulicao">3.232</div>
+					<div class="eletronica">5f6 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|24|8|2</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 10-->
+
+		<div class="coluna">
+		<p class="grupo">10</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">28</span>
+				<span class="massa">58,69</span>
+				<p class="simbolo">Ni</p>
+				<p class="nome">Níquel</p>
+				<p class="massamenor">58,69</p>
+				<div style="display:none;">
+					<div class="densidade">8.908</div>
+					<div class="eletronegatividade">1,91</div>
+					<div class="raio">124 pm</div>
+					<div class="ano">1751</div>
+					<div class="fusao">1.455</div>
+					<div class="ebulicao">2.887</div>
+					<div class="eletronica"> 4s1 3d9</div>
+					<div class="camadaeletrons">2|8|16|2|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">46</span>
+				<span class="massa">106,42</span>
+				<p class="simbolo">Pd</p>
+				<p class="nome">Paládio</p>
+				<p class="massamenor">106,42</p>
+				<div style="display:none;">
+					<div class="densidade">12023</div>
+					<div class="eletronegatividade">2,2</div>
+					<div class="raio">137 pm</div>
+					<div class="ano">1802</div>
+					<div class="fusao">1.555</div>
+					<div class="ebulicao">2.963</div>
+					<div class="eletronica">4d10</div>
+					<div class="camadaeletrons">2|8|18|18|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">78</span>
+				<span class="massa">195,08</span>
+				<p class="simbolo">Pt</p>
+				<p class="nome">Platina</p>
+				<p class="massamenor">195,08</p>
+				<div style="display:none;">
+					<div class="densidade">21.090</div>
+					<div class="eletronegatividade">2,28</div>
+					<div class="raio">139 pm</div>
+					<div class="ano">1735</div>
+					<div class="fusao">1.768</div>
+					<div class="ebulicao">3.825</div>
+					<div class="eletronica">4f14 5d9 6s1</div>
+					<div class="camadaeletrons">2|8|18|32|17|1|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">110</span>
+				<span class="massa">281</span>
+				<p class="simbolo">Ds</p>
+				<p class="nome nomemaior">Darmstádtio</p>
+				<p class="massamenor">281</p>
+				<div style="display:none;">
+					<div class="densidade">34.800</div>
+					<div class="eletronegatividade">--</div>
+					<div class="raio">118 pm</div>
+					<div class="ano">1994</div>
+					<div class="fusao">--</div>
+					<div class="ebulicao">--</div>
+					<div class="eletronica"> 5f14 6d8 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|32|16|2</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">63</span>
+				<span class="massa">151,96</span>
+				<p class="simbolo">Eu</p>
+				<p class="nome">Európio</p>
+				<p class="massamenor">151,96</p>
+				<div style="display:none;">
+					<div class="densidade">5.264</div>
+					<div class="eletronegatividade">1,2</div>
+					<div class="raio">180 pm</div>
+					<div class="ano">1901</div>
+					<div class="fusao">826</div>
+					<div class="ebulicao">1.529</div>
+					<div class="eletronica">4f7 6s2</div>
+					<div class="camadaeletrons">2|8|18|25|8|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">95</span>
+				<span class="massa">243</span>
+				<p class="simbolo">Am</p>
+				<p class="nome">Amerício</p>
+				<p class="massamenor">243</p>
+				<div style="display:none;">
+					<div class="densidade">12.000</div>
+					<div class="eletronegatividade">1,3</div>
+					<div class="raio">173 pm</div>
+					<div class="ano">1944</div>
+					<div class="fusao">1.176</div>
+					<div class="ebulicao">2.607</div>
+					<div class="eletronica"> 5f7 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|25|8|2</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 11-->
+
+		<div class="coluna">
+		<p class="grupo">11</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento" style="visibility: hidden;">
+			</div>
+
+			<div class="elemento metaistrans">
+				<span class="numero">29</span>
+				<span class="massa">63,54</span>
+				<p class="simbolo">Cu</p>
+				<p class="nome">Cobre</p>
+				<p class="massamenor">63,54</p>
+				<div style="display:none;">
+					<div class="densidade">8.920</div>
+					<div class="eletronegatividade">1,9</div>
+					<div class="raio">128 pm</div>
+					<div class="ano">9000 a.C.</div>
+					<div class="fusao">1.085</div>
+					<div class="ebulicao">2.562</div>
+					<div class="eletronica"> 3d10 4s1</div>
+					<div class="camadaeletrons">2|8|18|1|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">47</span>
+				<span class="massa">107,87</span>
+				<p class="simbolo">Ag</p>
+				<p class="nome">Prata</p>
+				<p class="massamenor">107,87</p>
+				<div style="display:none;">
+					<div class="densidade">10.490</div>
+					<div class="eletronegatividade">1,93</div>
+					<div class="raio">144 pm</div>
+					<div class="ano">--</div>
+					<div class="fusao">961,8</div>
+					<div class="ebulicao">2.162</div>
+					<div class="eletronica"> 4d10 5s1</div>
+					<div class="camadaeletrons">2|8|18|18|1|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">79</span>
+				<span class="massa">196,97</span>
+				<p class="simbolo">Au</p>
+				<p class="nome">Ouro</p>
+				<p class="massamenor">196,97</p>
+				<div style="display:none;">
+					<div class="densidade">19.300</div>
+					<div class="eletronegatividade">2,54</div>
+					<div class="raio">174 pm</div>
+					<div class="ano">--</div>
+					<div class="fusao">1.064</div>
+					<div class="ebulicao">2.700</div>
+					<div class="eletronica"> 4f14 5d10 6s1</div>
+					<div class="camadaeletrons">2|8|18|32|18|1|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">111</span>
+				<span class="massa">282</span>
+				<p class="simbolo">Rg</p>
+				<p class="nome nomemaior">Roentgênio</p>
+				<p class="massamenor">282</p>
+				<div style="display:none;">
+					<div class="densidade">28.700</div>
+					<div class="eletronegatividade">--</div>
+					<div class="raio">114 pm</div>
+					<div class="ano">1994</div>
+					<div class="fusao">--</div>
+					<div class="ebulicao">--</div>
+					<div class="eletronica"> 5f14 6d9 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|32|17|2</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">64</span>
+				<span class="massa">157,25</span>
+				<p class="simbolo">Gd</p>
+				<p class="nome">Gadolínio</p>
+				<p class="massamenor">157,25</p>
+				<div style="display:none;">
+					<div class="densidade">7;901</div>
+					<div class="eletronegatividade">1,2</div>
+					<div class="raio">180 pm</div>
+					<div class="ano">1880</div>
+					<div class="fusao">1.313</div>
+					<div class="ebulicao">3.272</div>
+					<div class="eletronica"> 4f7 5d1 6s2</div>
+					<div class="camadaeletrons">2|8|18|25|9|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">96</span>
+				<span class="massa">247</span>
+				<p class="simbolo">Cm</p>
+				<p class="nome">Cúrio</p>
+				<p class="massamenor">247</p>
+				<div style="display:none;">
+					<div class="densidade">13.510</div>
+					<div class="eletronegatividade">1,3</div>
+					<div class="raio">174 pm</div>
+					<div class="ano">1944</div>
+					<div class="fusao">1.345</div>
+					<div class="ebulicao">3.110</div>
+					<div class="eletronica"> 5f7 6d1 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|25|9|2</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 12-->
+
+		<div class="coluna">
+		<p class="grupo">12</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">30</span>
+				<span class="massa">65,38</span>
+				<p class="simbolo">Zn</p>
+				<p class="nome">Zinco</p>
+				<p class="massamenor">65,38</p>
+				<div style="display:none;">
+					<div class="densidade">7.140</div>
+					<div class="eletronegatividade">1,65</div>
+					<div class="raio">134 pm</div>
+					<div class="ano">1746</div>
+					<div class="fusao">419,5</div>
+					<div class="ebulicao">907</div>
+					<div class="eletronica">3d10 4s2</div>
+					<div class="camadaeletrons">2|8|18|2|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">48</span>
+				<span class="massa">112,41</span>
+				<p class="simbolo">Cd</p>
+				<p class="nome">Cádmio</p>
+				<p class="massamenor">112,41</p>
+				<div style="display:none;">
+					<div class="densidade">8.650</div>
+					<div class="eletronegatividade">1,69</div>
+					<div class="raio">151 pm</div>
+					<div class="ano">1817</div>
+					<div class="fusao">321,1</div>
+					<div class="ebulicao">766,8</div>
+					<div class="eletronica"> 5s2 4d10</div>
+					<div class="camadaeletrons">2|8|18|18|2|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">80</span>
+				<span class="massa">200,59</span>
+				<p class="simbolo">Hg</p>
+				<p class="nome">Mercúrio</p>
+				<p class="massamenor">200,59</p>
+				<div style="display:none;">
+					<div class="densidade">13.579</div>
+					<div class="eletronegatividade">2</div>
+					<div class="raio">150 pm</div>
+					<div class="ano">--</div>
+					<div class="fusao">-38,83</div>
+					<div class="ebulicao">356,7</div>
+					<div class="eletronica">4f14 5d10 6s2</div>
+					<div class="camadaeletrons">2|8|18|32|18|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento metaistrans">
+				<span class="numero">112</span>
+				<span class="massa">285</span>
+				<p class="simbolo">Cn</p>
+				<p class="nome nomemaior">Copernício</p>
+				<p class="massamenor">285</p>
+				<div style="display:none;">
+					<div class="densidade">23.700</div>
+					<div class="eletronegatividade">--</div>
+					<div class="raio">110 pm</div>
+					<div class="ano">1996</div>
+					<div class="fusao">--</div>
+					<div class="ebulicao">--</div>
+					<div class="eletronica">5f14 6d10 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|32|18|2</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">65</span>
+				<span class="massa">158,93</span>
+				<p class="simbolo">Tb</p>
+				<p class="nome">Térbio</p>
+				<p class="massamenor">158,93</p>
+				<div style="display:none;">
+					<div class="densidade">8.219</div>
+					<div class="eletronegatividade">1,2</div>
+					<div class="raio">177 pm</div>
+					<div class="ano">1843</div>
+					<div class="fusao">1.538</div>
+					<div class="ebulicao">2.862</div>
+					<div class="eletronica">4f9 6s2</div>
+					<div class="camadaeletrons">2|8|18|27|8|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">97</span>
+				<span class="massa">247</span>
+				<p class="simbolo">Bk</p>
+				<p class="nome nomemaior">Berquélio</p>
+				<p class="massamenor">247</p>
+				<div style="display:none;">
+					<div class="densidade">13.250</div>
+					<div class="eletronegatividade">1,3</div>
+					<div class="raio">170 pm</div>
+					<div class="ano">1949</div>
+					<div class="fusao">986</div>
+					<div class="ebulicao">2.627</div>
+					<div class="eletronica">5f9 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|27|8|2</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 13-->
+
+		<div class="coluna">
+		<p class="grupo">13</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento semimetais">
+				<span class="numero">5</span>
+				<span class="massa">10,81</span>
+				<p class="simbolo">B</p>
+				<p class="nome">Boro</p>
+				<p class="massamenor">10,81</p>
+				<div style="display:none;">
+					<div class="densidade">2.460</div>
+					<div class="eletronegatividade">2,04</div>
+					<div class="raio">87 pm</div>
+					<div class="ano">1808</div>
+					<div class="fusao">2.076</div>
+					<div class="ebulicao">3.927</div>
+					<div class="eletronica">1s2 2s2 2p1</div>
+					<div class="camadaeletrons">2|3|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento outrosmetais">
+				<span class="numero">13</span>
+				<span class="massa">6,982</span>
+				<p class="simbolo">Al</p>
+				<p class="nome">Alumínio</p>
+				<p class="massamenor">6,982</p>
+				<div style="display:none;">
+					<div class="densidade">2.697</div>
+					<div class="eletronegatividade">1,61</div>
+					<div class="raio">143 pm</div>
+					<div class="ano">1825</div>
+					<div class="fusao">660,3</div>
+					<div class="ebulicao">2.450</div>
+					<div class="eletronica">3s2 3p1</div>
+					<div class="camadaeletrons">2|8|3|&nbsp;|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento outrosmetais">
+				<span class="numero">31</span>
+				<span class="massa">69,723</span>
+				<p class="simbolo">Ga</p>
+				<p class="nome">Gálio</p>
+				<p class="massamenor">69,723</p>
+				<div style="display:none;">
+					<div class="densidade">5.904</div>
+					<div class="eletronegatividade">1,81</div>
+					<div class="raio">135 pm</div>
+					<div class="ano">1875</div>
+					<div class="fusao">29,76</div>
+					<div class="ebulicao">2.400</div>
+					<div class="eletronica"> 4s2 3d10 4p1</div>
+					<div class="camadaeletrons">2|8|18|3|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento outrosmetais">
+				<span class="numero">49</span>
+				<span class="massa">114,82</span>
+				<p class="simbolo">In</p>
+				<p class="nome">Índio</p>
+				<p class="massamenor">114,82</p>
+				<div style="display:none;">
+					<div class="densidade">7.310</div>
+					<div class="eletronegatividade">1,78</div>
+					<div class="raio">167 pm</div>
+					<div class="ano">1863</div>
+					<div class="fusao">156,6</div>
+					<div class="ebulicao">2.072</div>
+					<div class="eletronica">4d10 5s2 5p1</div>
+					<div class="camadaeletrons">2|8|18|18|3|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento outrosmetais">
+				<span class="numero">81</span>
+				<span class="massa">204,38</span>
+				<p class="simbolo">Tl</p>
+				<p class="nome">Tálio</p>
+				<p class="massamenor">204,38</p>
+				<div style="display:none;">
+					<div class="densidade">11.850</div>
+					<div class="eletronegatividade">1,62</div>
+					<div class="raio">170 pm</div>
+					<div class="ano">1861</div>
+					<div class="fusao">304</div>
+					<div class="ebulicao">1.473</div>
+					<div class="eletronica">4f14 5d10 6s2 6p1</div>
+					<div class="camadaeletrons">2|8|18|32|18|3|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento outrosmetais">
+				<span class="numero">113</span>
+				<span class="massa">286</span>
+				<p class="simbolo">Nh</p>
+				<p class="nome">Nihônio</p>
+				<p class="massamenor">286</p>
+				<div style="display:none;">
+					<div class="densidade">18.000</div>
+					<div class="eletronegatividade">--</div>
+					<div class="raio">170 pm</div>
+					<div class="ano">2003</div>
+					<div class="fusao">--</div>
+					<div class="ebulicao">--</div>
+					<div class="eletronica">5f14 6d10 7s2 7p1</div>
+					<div class="camadaeletrons">2|8|18|32|32|18|3</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">66</span>
+				<span class="massa">162,50</span>
+				<p class="simbolo">Dy</p>
+				<p class="nome">Disprósio</p>
+				<p class="massamenor">162,50</p>
+				<div style="display:none;">
+					<div class="densidade">8.551</div>
+					<div class="eletronegatividade">1,22</div>
+					<div class="raio">178 pm</div>
+					<div class="ano">1886</div>
+					<div class="fusao">1.412</div>
+					<div class="ebulicao">2.567</div>
+					<div class="eletronica">4f10 6s2
+</div>
+					<div class="camadaeletrons">2|8|18|28|8|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">98</span>
+				<span class="massa">251</span>
+				<p class="simbolo">Cf</p>
+				<p class="nome nomemaior">Califórnio</p>
+				<p class="massamenor">251</p>
+				<div style="display:none;">
+					<div class="densidade">15.100</div>
+					<div class="eletronegatividade">1,3</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1950</div>
+					<div class="fusao">900</div>
+					<div class="ebulicao">1.472</div>
+					<div class="eletronica">5f10 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|28|8|2</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 14-->
+
+		<div class="coluna">
+		<p class="grupo">14</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento naometais">
+				<span class="numero">6</span>
+				<span class="massa">12,01</span>
+				<p class="simbolo">C</p>
+				<p class="nome">Carbono</p>
+				<p class="massamenor">12,01</p>
+				<div style="display:none;">
+					<div class="densidade">2.267</div>
+					<div class="eletronegatividade">2,55</div>
+					<div class="raio">70 pm</div>
+					<div class="ano">--</div>
+					<div class="fusao">3.550</div>
+					<div class="ebulicao">4.287</div>
+					<div class="eletronica">2s2 2p2</div>
+					<div class="camadaeletrons">2|4|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento semimetais">
+				<span class="numero">14</span>
+				<span class="massa">28,08</span>
+				<p class="simbolo">Si</p>
+				<p class="nome">Silício</p>
+				<p class="massamenor">28,08</p>
+				<div style="display:none;">
+					<div class="densidade">2.330</div>
+					<div class="eletronegatividade">1,9</div>
+					<div class="raio">111 pm</div>
+					<div class="ano">1823</div>
+					<div class="fusao">1.414</div>
+					<div class="ebulicao">3.265</div>
+					<div class="eletronica">3s2 3p2</div>
+					<div class="camadaeletrons">2|8|4|&nbsp;|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento semimetais">
+				<span class="numero">32</span>
+				<span class="massa">72,63</span>
+				<p class="simbolo">Ge</p>
+				<p class="nome">Germânio</p>
+				<p class="massamenor">72,63</p>
+				<div style="display:none;">
+					<div class="densidade">5.323</div>
+					<div class="eletronegatividade">2,01</div>
+					<div class="raio">122 pm</div>
+					<div class="ano">1886</div>
+					<div class="fusao">938,2</div>
+					<div class="ebulicao">2.833</div>
+					<div class="eletronica">4s2 3d10 4p2</div>
+					<div class="camadaeletrons">2|8|18|4|&nbsp;|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento outrosmetais">
+				<span class="numero">50</span>
+				<span class="massa">118,71</span>
+				<p class="simbolo">Sn</p>
+				<p class="nome">Estanho</p>
+				<p class="massamenor">118,71</p>
+				<div style="display:none;">
+					<div class="densidade">7.310</div>
+					<div class="eletronegatividade">1,96</div>
+					<div class="raio">140 pm</div>
+					<div class="ano">--</div>
+					<div class="fusao">231,9</div>
+					<div class="ebulicao">2.602</div>
+					<div class="eletronica">4d10 5s2 5p2</div>
+					<div class="camadaeletrons">2|8|18|18|4|&nbsp;|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento outrosmetais">
+				<span class="numero">82</span>
+				<span class="massa">207,2</span>
+				<p class="simbolo">Pb</p>
+				<p class="nome">Chumbo</p>
+				<p class="massamenor">207,2</p>
+				<div style="display:none;">
+					<div class="densidade">11.340</div>
+					<div class="eletronegatividade">2,33</div>
+					<div class="raio">154 pm</div>
+					<div class="ano">--</div>
+					<div class="fusao">327,5</div>
+					<div class="ebulicao">1.749</div>
+					<div class="eletronica">4f14 5d10 6s2 6p2</div>
+					<div class="camadaeletrons">2|8|18|32|18|4|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento outrosmetais">
+				<span class="numero">114</span>
+				<span class="massa">289</span>
+				<p class="simbolo">Fl</p>
+				<p class="nome">Fleróvio</p>
+				<p class="massamenor">289</p>
+				<div style="display:none;">
+					<div class="densidade">22.000</div>
+					<div class="eletronegatividade">--</div>
+					<div class="raio">160 pm</div>
+					<div class="ano">1998</div>
+					<div class="fusao">--</div>
+					<div class="ebulicao">--</div>
+					<div class="eletronica">5f14 6d10 7s2 7p2</div>
+					<div class="camadaeletrons">2|8|18|32|32|18|4</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">67</span>
+				<span class="massa">164,93</span>
+				<p class="simbolo">Ho</p>
+				<p class="nome" >Hólmio</p>
+				<p class="massamenor">164,93</p>
+				<div style="display:none;">
+					<div class="densidade">8.800</div>
+					<div class="eletronegatividade">1,23</div>
+					<div class="raio">247 pm</div>
+					<div class="ano">1878</div>
+					<div class="fusao">1.472</div>
+					<div class="ebulicao">2.695</div>
+					<div class="eletronica">4f11 6s2</div>
+					<div class="camadaeletrons">2|8|18|29|8|2|&nbsp;</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">99</span>
+				<span class="massa">252</span>
+				<p class="simbolo">Es</p>
+				<p class="nome">Einstênio</p>
+				<p class="massamenor">252</p>
+				<div style="display:none;">
+					<div class="densidade">884</div>
+					<div class="eletronegatividade">1,3</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1952</div>
+					<div class="fusao">860</div>
+					<div class="ebulicao">--</div>
+					<div class="eletronica">5f11 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|29|8|2</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 15-->
+
+		<div class="coluna">
+		<p class="grupo">15</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento naometais">
+				<span class="numero">7</span>
+				<span class="massa">14,00</span>
+				<p class="simbolo">N</p>
+				<p class="nome nomemaior">Nitrogênio</p>
+				<p class="massamenor">14,00</p>
+				<div style="display:none;">
+					<div class="densidade">1,25</div>
+					<div class="eletronegatividade">3,04</div>
+					<div class="raio">65 pm</div>
+					<div class="ano">1772</div>
+					<div class="fusao">-210 °C</div>
+					<div class="ebulicao">-195,8 °C</div>
+					<div class="eletronica">2s2 2p3</div>
+					<div class="camadaeletrons">2|5|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento naometais">
+				<span class="numero">15</span>
+				<span class="massa">30,97</span>
+				<p class="simbolo">P</p>
+				<p class="nome">Fósforo</p>
+				<p class="massamenor">30,97</p>
+				<div style="display:none;">
+					<div class="densidade">1,82</div>
+					<div class="eletronegatividade">2,19</div>
+					<div class="raio">195 pm</div>
+					<div class="ano">1669</div>
+					<div class="fusao">44,1 ° C </div>
+					<div class="ebulicao">280 ° C</div>
+					<div class="eletronica">3s2 3p3</div>
+					<div class="camadaeletrons">2|8|5|&nbsp;|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento semimetais">
+				<span class="numero">33</span>
+				<span class="massa">74,922</span>
+				<p class="simbolo">As</p>
+				<p class="nome">Arsênio</p>
+				<p class="massamenor">74,922</p>
+				<div style="display:none;">
+					<div class="densidade">5,7</div>
+					<div class="eletronegatividade">2,18</div>
+					<div class="raio">185 pm</div>
+					<div class="ano">1995</div>
+					<div class="fusao">817 °C</div>
+					<div class="ebulicao">613 °C</div>
+					<div class="eletronica">3d10 4s2 4p3</div>
+					<div class="camadaeletrons">2|8|18|5|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento semimetais">
+				<span class="numero">51</span>
+				<span class="massa">121,76</span>
+				<p class="simbolo">Sb</p>
+				<p class="nome nomemaior">Antimônio</p>
+				<p class="massamenor">121,76</p>
+				<div style="display:none;">
+					<div class="densidade">6,7</div>
+					<div class="eletronegatividade">2,05</div>
+					<div class="raio">206 pm</div>
+					<div class="ano">3000 a.C.</div>
+					<div class="fusao">630,6 °C</div>
+					<div class="ebulicao">1.587 °C</div>
+					<div class="eletronica">4d10 5s2 5p3</div>
+					<div class="camadaeletrons">2|8|18|18|5|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento outrosmetais">
+				<span class="numero">83</span>
+				<span class="massa">208,98</span>
+				<p class="simbolo">Bi</p>
+				<p class="nome">Bismuto</p>
+				<p class="massamenor">289</p>
+				<div style="display:none;">
+					<div class="densidade">9,8</div>
+					<div class="eletronegatividade">2,02</div>
+					<div class="raio">230 pm</div>
+					<div class="ano">1753</div>
+					<div class="fusao">271,4 °C</div>
+					<div class="ebulicao">1.564 °C</div>
+					<div class="eletronica">4f14 5d10 6s2 6p3</div>
+					<div class="camadaeletrons">2|8|18|32|18|5|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento outrosmetais">
+				<span class="numero">115</span>
+				<span class="massa">288</span>
+				<p class="simbolo">Mc</p>
+				<p class="nome">Moscóvio</p>
+				<p class="massamenor">288</p>
+				<div style="display:none;">
+					<div class="densidade">-</div>
+					<div class="eletronegatividade">-</div>
+					<div class="raio">200 pm</div>
+					<div class="ano"> 2003</div>
+					<div class="fusao">-</div>
+					<div class="ebulicao">-</div>
+					<div class="eletronica">5f14 6d10 7s2 7p3</div>
+					<div class="camadaeletrons">2|8|18|32|32|18|5|</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">68</span>
+				<span class="massa">167,26</span>
+				<p class="simbolo">Er</p>
+				<p class="nome">Érbio</p>
+				<p class="massamenor">167,26</p>
+				<div style="display:none;">
+					<div class="densidade">9,06</div>
+					<div class="eletronegatividade">1,24</div>
+					<div class="raio">175 pm</div>
+					<div class="ano">1843</div>
+					<div class="fusao">1.529 °C</div>
+					<div class="ebulicao">2.867 °C</div>
+					<div class="eletronica">6s2 4f12 5d0</div>
+					<div class="camadaeletrons">2|8|18|30|8|2|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">100</span>
+				<span class="massa">257</span>
+				<p class="simbolo">Fm</p>
+				<p class="nome">Férmio</p>
+				<p class="massamenor">257</p>
+				<div style="display:none;">
+					<div class="densidade">-</div>
+					<div class="eletronegatividade">1,3</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1953</div>
+					<div class="fusao">1.527 °C</div>
+					<div class="ebulicao">-</div>
+					<div class="eletronica">5f12 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|30|8|2|</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 16-->
+
+		<div class="coluna">
+		<p class="grupo">16</p>
+			<div class="elemento" style="visibility: hidden;"></div>
+
+			<div class="elemento naometais">
+				<span class="numero">8</span>
+				<span class="massa">15,99</span>
+				<p class="simbolo">O</p>
+				<p class="nome">Oxigênio</p>
+				<p class="massamenor" >15,99</p>
+				<div style="display:none;">
+					<div class="densidade">1,43</div>
+					<div class="eletronegatividade">3,5</div>
+					<div class="raio">60 pm</div>
+					<div class="ano">1772</div>
+					<div class="fusao">-218,8 °C</div>
+					<div class="ebulicao">-183 °C</div>
+					<div class="eletronica">2s2 2p4</div>
+					<div class="camadaeletrons">2|6|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento naometais">
+				<span class="numero">16</span>
+				<span class="massa">32,06</span>
+				<p class="simbolo">S</p>
+				<p class="nome">Enxofre</p>
+				<p class="massamenor">32,06</p>
+				<div style="display:none;">
+					<div class="densidade">1,96</div>
+					<div class="eletronegatividade">2,58</div>
+					<div class="raio">100 pm</div>
+					<div class="ano">1777</div>
+					<div class="fusao">115,2 °C</div>
+					<div class="ebulicao">444,6 °C</div>
+					<div class="eletronica">3s2 3p4</div>
+					<div class="camadaeletrons">2|8|6|&nbsp;|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento naometais">
+				<span class="numero">34</span>
+				<span class="massa">78,97</span>
+				<p class="simbolo">Se</p>
+				<p class="nome">Selênio</p>
+				<p class="massamenor">78,97</p>
+				<div style="display:none;">
+					<div class="densidade">4,81</div>
+					<div class="eletronegatividade">2,55</div>
+					<div class="raio">120 pm</div>
+					<div class="ano">1817</div>
+					<div class="fusao">220 °C</div>
+					<div class="ebulicao">684,8 °C</div>
+					<div class="eletronica">3d10 4s2 4p4</div>
+					<div class="camadaeletrons">2|8|18|6|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento semimetais">
+				<span class="numero">52</span>
+				<span class="massa">127,60</span>
+				<p class="simbolo">Te</p>
+				<p class="nome">Telúrio</p>
+				<p class="massamenor">127,60</p>
+				<div style="display:none;">
+					<div class="densidade">6,2</div>
+					<div class="eletronegatividade">2,55</div>
+					<div class="raio">120 pm</div>
+					<div class="ano">1817</div>
+					<div class="fusao">220 °C</div>
+					<div class="ebulicao">684,8 °C</div>
+					<div class="eletronica">3d10 4s2 4p4</div>
+					<div class="camadaeletrons">2|8|18|18|6|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento semimetais">
+				<span class="numero">84</span>
+				<span class="massa">209</span>
+				<p class="simbolo">Po</p>
+				<p class="nome">Polônio</p>
+				<p class="massamenor">209</p>
+				<div style="display:none;">
+					<div class="densidade">9,2</div>
+					<div class="eletronegatividade">2</div>
+					<div class="raio">190 pm</div>
+					<div class="ano">1898</div>
+					<div class="fusao">254 °C</div>
+					<div class="ebulicao">962 °C</div>
+					<div class="eletronica">4f14 5d10 6s2 6p4</div>
+					<div class="camadaeletrons">2|8|18|32|18|6|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento outrosmetais">
+				<span class="numero">116</span>
+				<span class="massa">293</span>
+				<p class="simbolo">Lv</p>
+				<p class="nome nomemaior">Livermório</p>
+				<p class="massamenor">293</p>
+				<div style="display:none;">
+					<div class="densidade">-</div>
+					<div class="eletronegatividade">-</div>
+					<div class="raio">-</div>
+					<div class="ano">2000</div>
+					<div class="fusao">-</div>
+					<div class="ebulicao">-</div>
+					<div class="eletronica">5f14 6d10 7s2 7p4</div>
+					<div class="camadaeletrons">2|8|18|32|32|18|6|</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">69</span>
+				<span class="massa">168,93</span>
+				<p class="simbolo">Tm</p>
+				<p class="nome">Túlio</p>
+				<p class="massamenor">168,93</p>
+				<div style="display:none;">
+					<div class="densidade">9,32</div>
+					<div class="eletronegatividade">1,25</div>
+					<div class="raio">230 pm</div>
+					<div class="ano">1879</div>
+					<div class="fusao">1.545 °C</div>
+					<div class="ebulicao">1.730 °C</div>
+					<div class="eletronica">4f13 6s2</div>
+					<div class="camadaeletrons">2|8|18|31|8|2|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">101</span>
+				<span class="massa">258</span>
+				<p class="simbolo">Md</p>
+				<p class="nome nomemaior">Mendelévio</p>
+				<p class="massamenor">258</p>
+				<div style="display:none;">
+					<div class="densidade">-</div>
+					<div class="eletronegatividade">1,3</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1,25</div>
+					<div class="fusao">827 °C</div>
+					<div class="ebulicao">-</div>
+					<div class="eletronica">7s2 5f13</div>
+					<div class="camadaeletrons">2|8|18|32|31|8|2|</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 17-->
+
+		<div class="coluna">
+		<p class="grupo">17</p>
+			<div class="elemento" style="visibility: hidden;">
+
+			</div>
+
+			<div class="elemento halogenos">
+				<span class="numero">9</span>
+				<span class="massa">18,99</span>
+				<p class="simbolo">F</p>
+				<p class="nome">Flúor</p>
+				<p class="massamenor"></p>
+				<div style="display:none;">
+					<div class="densidade">1,696</div>
+					<div class="eletronegatividade">3,98</div>
+					<div class="raio">147 pm</div>
+					<div class="ano">1886</div>
+					<div class="fusao">-219,6 °C</div>
+					<div class="ebulicao">-188,1 °C</div>
+					<div class="eletronica">2s2 2p5</div>
+					<div class="camadaeletrons">2|7|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento halogenos">
+				<span class="numero">17</span>
+				<span class="massa">35,45</span>
+				<p class="simbolo">Cl</p>
+				<p class="nome">Cloro</p>
+				<p class="massamenor">35,45</p>
+				<div style="display:none;">
+					<div class="densidade">3,214</div>
+					<div class="eletronegatividade">3,16</div>
+					<div class="raio">175 pm</div>
+					<div class="ano">1774</div>
+					<div class="fusao">-101,5 °C</div>
+					<div class="ebulicao">-34,04 °C</div>
+					<div class="eletronica">3s2 3p5</div>
+					<div class="camadaeletrons">2|8|7|&nbsp;|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento halogenos">
+				<span class="numero">35</span>
+				<span class="massa">79,90</span>
+				<p class="simbolo">Br</p>
+				<p class="nome">Bromo</p>
+				<p class="massamenor">79,90</p>
+				<div style="display:none;">
+					<div class="densidade">79,90</div>
+					<div class="eletronegatividade">2,96</div>
+					<div class="raio">185 pm</div>
+					<div class="ano">1826</div>
+					<div class="fusao">58,8 °C</div>
+					<div class="ebulicao">58,8 °C</div>
+					<div class="eletronica">3d10 4s2 4p5</div>
+					<div class="camadaeletrons">2|8|18|7|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento halogenos">
+				<span class="numero">53</span>
+				<span class="massa">126,90</span>
+				<p class="simbolo">I</p>
+				<p class="nome">Iodo</p>
+				<p class="massamenor">126,90</p>
+				<div style="display:none;">
+					<div class="densidade">4,94</div>
+					<div class="eletronegatividade">2,66</div>
+					<div class="raio">140 pm</div>
+					<div class="ano">1811</div>
+					<div class="fusao">113,7 °C</div>
+					<div class="ebulicao">184,3 °C</div>
+					<div class="eletronica">4d10 5s2 5p5</div>
+					<div class="camadaeletrons">2|8|18|18|7|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento halogenos">
+				<span class="numero">85</span>
+				<span class="massa">210</span>
+				<p class="simbolo">At</p>
+				<p class="nome">Astato</p>
+				<p class="massamenor">210</p>
+				<div style="display:none;">
+					<div class="densidade">7</div>
+					<div class="eletronegatividade">2,2</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1940</div>
+					<div class="fusao">302 °C</div>
+					<div class="ebulicao"> 336,8 °C</div>
+					<div class="eletronica">4f14 5d10 6s2 6p5</div>
+					<div class="camadaeletrons">2|8|18|32|18|7|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento halogenos">
+				<span class="numero">117</span>
+				<span class="massa">294</span>
+				<p class="simbolo">Ts</p>
+				<p class="nome nomemaior">Tenesso</p>
+				<p class="massamenor">294</p>
+				<div style="display:none;">
+					<div class="densidade">-</div>
+					<div class="eletronegatividade">-</div>
+					<div class="raio">-</div>
+					<div class="ano">2010</div>
+					<div class="fusao">-</div>
+					<div class="ebulicao">-</div>
+					<div class="eletronica">5f14 6d10 7s2 7p5</div>
+					<div class="camadaeletrons">2|8|18|32|32|18|7|</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">70</span>
+				<span class="massa">173,05</span>
+				<p class="simbolo">Yb</p>
+				<p class="nome">Itérbio</p>
+				<p class="massamenor">173,05</p>
+				<div style="display:none;">
+					<div class="densidade">6,57</div>
+					<div class="eletronegatividade">1,1</div>
+					<div class="raio">176 pm</div>
+					<div class="ano">1878</div>
+					<div class="fusao">824 °C</div>
+					<div class="ebulicao">1.196 °C</div>
+					<div class="eletronica">4f14 6s2</div>
+					<div class="camadaeletrons">2|8|18|32|8|2|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">102</span>
+				<span class="massa">259</span>
+				<p class="simbolo">No</p>
+				<p class="nome">Nobélio</p>
+				<p class="massamenor">259</p>
+				<div style="display:none;">
+					<div class="densidade">-</div>
+					<div class="eletronegatividade">1,3</div>
+					<div class="raio">200 pm</div>
+					<div class="ano">1966</div>
+					<div class="fusao">827 °C</div>
+					<div class="ebulicao">-</div>
+					<div class="eletronica">5f14 7s2</div>
+					<div class="camadaeletrons">2|8|18|32|32|8|2|</div>
+				</div>
+			</div>
+		</div>
+		<!--Coluna 18-->
+		<div class="coluna">
+			<p class="grupo">18</p>
+			<div class="elemento gasesnobres">
+				<span class="numero">2</span>
+				<span class="massa">4,00</span>
+				<p class="simbolo">He</p>
+				<p class="nome">Hélio</p>
+				<p class="massamenor">4,00</p>
+				<div style="display:none;">
+					<div class="densidade">0,18</div>
+					<div class="eletronegatividade">-</div>
+					<div class="raio">31 pm</div>
+					<div class="ano">1868</div>
+					<div class="fusao">-272,2 °C</div>
+					<div class="ebulicao">-268,9 °C</div>
+					<div class="eletronica">1s2</div>
+					<div class="camadaeletrons">2|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+
+			<div class="elemento gasesnobres">
+				<span class="numero">10</span>
+				<span class="massa">20,18</span>
+				<p class="simbolo">Ne</p>
+				<p class="nome">Neônio</p>
+				<p class="massamenor">20,18</p>
+				<div style="display:none;">
+					<div class="densidade">0,9</div>
+					<div class="eletronegatividade">-</div>
+					<div class="raio">38 pm</div>
+					<div class="ano">1898</div>
+					<div class="fusao">-248,6 °C</div>
+					<div class="ebulicao">-246 °C</div>
+					<div class="eletronica">2s2 2p6</div>
+					<div class="camadaeletrons">2|8|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento gasesnobres">
+				<span class="numero">18</span>
+				<span class="massa">39,95</span>
+				<p class="simbolo">Ar</p>
+				<p class="nome">Argônio</p>
+				<p class="massamenor">39,95</p>
+				<div style="display:none;">
+					<div class="densidade">1,78</div>
+					<div class="eletronegatividade">-</div>
+					<div class="raio">71 pm</div>
+					<div class="ano">1894</div>
+					<div class="fusao">-189,4 °C</div>
+					<div class="ebulicao">-185,8 °C</div>
+					<div class="eletronica">3s2 3p6</div>
+					<div class="camadaeletrons">2|8|8|&nbsp;|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento gasesnobres">
+				<span class="numero">36</span>
+				<span class="massa">83,80</span>
+				<p class="simbolo">Kr</p>
+				<p class="nome nomemaior">Criptônio</p>
+				<p class="massamenor">83,80</p>
+				<div style="display:none;">
+					<div class="densidade" >3,74</div>
+					<div class="eletronegatividade">3</div>
+					<div class="raio">88 pm</div>
+					<div class="ano">1898</div>
+					<div class="fusao">-157,4 °C</div>
+					<div class="ebulicao">-153,4 °C</div>
+					<div class="eletronica">3d10 4s2 4p6</div>
+					<div class="camadaeletrons">2|8|18|8|&nbsp;|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento gasesnobres">
+				<span class="numero">54</span>
+				<span class="massa">131,29</span>
+				<p class="simbolo">Xe</p>
+				<p class="nome">Xenônio</p>
+				<p class="massamenor">131,29</p>
+				<div style="display:none;">
+					<div class="densidade">5,9</div>
+					<div class="eletronegatividade">2,6</div>
+					<div class="raio">108 pm</div>
+					<div class="ano">1898</div>
+					<div class="fusao">-111,8 °C</div>
+					<div class="ebulicao">-108,1 °C</div>
+					<div class="eletronica">4d10 5s2 5p6</div>
+					<div class="camadaeletrons">2|8|18|18|8|&nbsp;|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento gasesnobres">
+				<span class="numero">86</span>
+				<span class="massa">222</span>
+				<p class="simbolo">Rn</p>
+				<p class="nome">Randônio</p>
+				<p class="massamenor">222</p>
+				<div style="display:none;">
+					<div class="densidade">9,73 kg/m</div>
+					<div class="eletronegatividade">2,2</div>
+					<div class="raio">134 pm</div>
+					<div class="ano">1900</div>
+					<div class="fusao">-71,15 °C</div>
+					<div class="ebulicao">-61,7 °C</div>
+					<div class="eletronica">4f14 5d10 6s2 6p6</div>
+					<div class="camadaeletrons">2|8|18|32|18|8|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento gasesnobres">
+				<span class="numero">118</span>
+				<span class="massa">294</span>
+				<p class="simbolo">Og</p>
+				<p class="nome nomemaior" >Oganessônio</p>
+				<p class="massamenor">294</p>
+				<div style="display:none;">
+					<div class="densidade">-</div>
+					<div class="eletronegatividade">-</div>
+					<div class="raio">152 pm</div>
+					<div class="ano">2006</div>
+					<div class="fusao">-</div>
+					<div class="ebulicao">-</div>
+					<div class="eletronica">5f14 6d10 7s2 7p6</div>
+					<div class="camadaeletrons">2|8|18|32|32|18|8|</div>
+				</div>
+			</div>
+
+			<div class="elemento lantanideos" style="margin-top: 30px;">
+				<span class="numero">71</span>
+				<span class="massa">174,97</span>
+				<p class="simbolo">Lu</p>
+				<p class="nome">Lutécio</p>
+				<p class="massamenor">174,97</p>
+				<div style="display:none;">
+					<div class="densidade">9,841</div>
+					<div class="eletronegatividade">1,27</div>
+					<div class="raio">175 pm</div>
+					<div class="ano">1907</div>
+					<div class="fusao">1.663 °C</div>
+					<div class="ebulicao">3.395 °C</div>
+					<div class="eletronica">4f14 5d1 6s2</div>
+					<div class="camadaeletrons">2|8|18|32|9|2|&nbsp;|</div>
+				</div>
+			</div>
+			<div class="elemento actinidios">
+				<span class="numero">103</span>
+				<span class="massa">262</span>
+				<p class="simbolo">Lr</p>
+				<p class="nome nomemaior">Laurêncio</p>
+				<p class="massamenor">262</p>
+				<div style="display:none;">
+					<div class="densidade">-</div>
+					<div class="eletronegatividade">1,3</div>
+					<div class="raio">-</div>
+					<div class="ano">1961</div>
+					<div class="fusao">1.627 °C</div>
+					<div class="ebulicao">-</div>
+					<div class="eletronica">7s2 5f14 6d1</div>
+					<div class="camadaeletrons">2|8|18|32|32|9|2|</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="legendabox">
+		<h2 class="legendatitle">LEGENDA</h2>
+
+		<div class="elementolegenda">
+			<span class="numerolegenda" style="font-size: 15px;">N&ordm; Atômico</span>
+			<span class="massalegenda">Massa</span>
+			<p class="simbololegenda" style="margin-top: 30px">Símbolo</p>
+			<p class="nomelegenda" style="margin-top: 1vh">Nome do elemento</p>
+		</div>
+
+		<div class="legendatodoselementos">
+		<div class="conjuntolegenda">
+			<div class="naometais corlegenda"></div>
+			<div>Não metais</div>
+		</div>
+
+		<div class="conjuntolegenda">
+			<div class="metaisalc corlegenda"></div>
+			<div>Metais alcalinos</div>
+		</div>
+
+		<div class="conjuntolegenda">
+			<div class="metaisalcterrosos corlegenda"></div>
+			<div>Metais alcalino-terrosos</div>
+		</div>
+		<div class="conjuntolegenda">
+			<div class="metaistrans corlegenda"></div>
+			<div>Metais de transição</div>
+		</div>
+		<div class="conjuntolegenda">
+			<div class="outrosmetais corlegenda"></div>
+			<div>Outros metais</div>
+		</div>
+		<div class="conjuntolegenda">
+			<div class="semimetais corlegenda"></div>
+			<div>Semimetais</div>
+		</div>
+		<div class="conjuntolegenda">
+			<div class="halogenos corlegenda"></div>
+			<div>Halógenos</div>
+		</div>
+		<div class="conjuntolegenda">
+			<div class="gasesnobres corlegenda"></div>
+			<div>Gases Nobres</div>
+		</div>
+		<div class="conjuntolegenda">
+			<div class="lantanideos corlegenda"></div>
+			<div>Lantanídeos</div>
+		</div>
+		<div  class="conjuntolegenda">
+			<div class="actinidios corlegenda"></div>
+			<div>Actinídios</div>
+		</div>
+
+		</div>
+		<br clear="all">
+	</div>
+
+</body>
+</html>
