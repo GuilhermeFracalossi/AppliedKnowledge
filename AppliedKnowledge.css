@@ -1,0 +1,884 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+/* Menu de navegação */
+.menul li {
+	/*Menu de navegação*/
+	display: inline-block;
+	margin-left: 3vw;
+	position: sticky;
+	top: 0px;
+}
+/*.menul ul{
+	 display:inline-block; */
+/* margin: 0px 9vw; */
+/* padding-left: 1vw; */
+/* white-space: nowrap; */
+/* width: 82vw
+}*/
+.drp {
+	background: none;
+	border: none;
+}
+.menul {
+	z-index: 10;
+	background: white;
+	box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.1);
+	margin-bottom: 75px;
+	margin-top: 50px;
+}
+.menul p {
+	font-family: 'Montserrat' !important;
+	margin-bottom: 16px;
+	font-size: 100%;
+	background: transparent;
+	display: inline-block;
+}
+.menul a {
+	text-align: center;
+	background: white;
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+	width: 16vw;
+	padding: 25px 0px 5px 0px;
+}
+.menudrop {
+	display: none;
+}
+.dropdown,
+.show {
+	text-align: center;
+}
+.dropdown-menu {
+	width: 100vw;
+}
+.dropdown-menu li {
+	display: block;
+}
+.logo {
+	display: flex;
+	justify-content: center; /*Pra alinhar o logo*/
+}
+/*Efeito de hover*/
+.link1,
+.link2,
+.link3,
+.link4,
+.link5 {
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	position: relative;
+	/* overflow: hidden; */
+}
+.link1:hover p,
+.link2:hover p,
+.link3:hover p,
+.link4:hover p,
+.link5:hover p {
+	transition: transform .3s;
+	transform: scale(1.2);
+	color: #0056b3;
+}
+.link1 p,
+.link2 p,
+.link3 p,
+.link4 p,
+.link5 p {
+	transition: transform .1s;
+	transform: scale(1);
+}
+.link1:hover,
+.link2:hover,
+.link3:hover,
+.link4:hover,
+.link5:hover {
+	text-decoration: none;
+}
+
+.link1:before,
+.link2:before,
+.link3:before,
+.link4:before,
+.link5:before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: 51%;
+	right: 51%;
+	bottom: 0px;
+	background: #2098d1;
+	height: 4px;
+	transition-property: left, right, top;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+.link1:hover:before,
+.link1:focus:before,
+.link1:active:before,
+.link2:hover:before,
+.link2:focus:before,
+.link2:active:before,
+.link3:hover:before,
+.link3:focus:before,
+.link3:active:before,
+.link4:hover:before,
+.link4:focus:before,
+.link4:active:before,
+.link5:hover:before,
+.link5:focus:before,
+.link5:active:before {
+	left: 0;
+	right: 0;
+}
+/* FIM DOS CODIGOS DE HOVER */
+
+
+/*------------------ FIM MENU -----------------------*/
+/*------------------ FIM MENU -----------------------*/
+
+
+
+/*------------------  PAGINA QUIMICA -------------------------------*/
+/*------------------  PAGINA QUIMICA -------------------------------*/
+/*------------------  PAGINA QUIMICA -------------------------------*/
+.titulo { /*"TABELA PERIÓDICA"*/
+	margin: auto;
+	font-size: 6vh;
+	text-align: center;
+}
+
+.subtitlegrupo{ /*"GRUPO"*/
+	font-size: 2vh;
+	margin: auto;
+	font-weight: bold;
+	background-color: rgba(255,255,255,0.7);
+	padding: 15px 0px 15px 0px;
+	max-width: 1510px;
+	border:1px solid black;
+	border-bottom: none;
+}
+.tabela { /*Div com toda a tabela periódica*/
+	max-width: 1510px;
+	margin: auto;
+	border:1px solid black;
+	border-top: none;
+	padding-bottom: 15px;
+	background-color: rgba(255,255,255,0.7);
+	overflow: auto;
+	display: flex;
+}
+/*-----------Início Pop-Up (Todas informações dos elementos)--------------*/
+.infoelemento{
+	width: 1050px;
+	border-radius: 15px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top:0;
+	margin-top: 20vh;
+	margin-right: auto;
+	margin-left: auto;
+	display: none;
+	z-index: 99;
+	background-color: white;
+	padding: 0px 15px 20px 15px;
+	background-image: url("Quimica/infobg.png");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	box-shadow: 10px 15px 35px rgba(0,0,0,0.5);
+
+}
+.infoelemento>p{
+	margin-left:460px;
+	margin-top: 15px;
+	font-size: 25px;
+	font-weight: bold;
+	position: absolute;
+
+}
+.titulo-info{
+	font-size: 5vh;
+	padding: 5px;
+	border-radius: 10px;
+	border-bottom: 5px solid black;
+	text-align: center;
+}
+.content-left-info{
+	width: 250px;
+	min-width: 150px;
+	float: left;
+	margin-left: -10px;
+	margin-top: 10px;
+	text-align: center;
+}
+.content-left-info p{
+	font-size: 25px;
+	text-align: center;
+	float: left;
+}
+.content-left-info img{
+	margin: 13px 10px 0px 0px;
+	width: 250px;
+	min-width: 150px;
+}
+.informacoes-info{
+	float: left;
+	margin-top: 50px;
+	margin-left: 40px;
+}
+.informacoes-info2{
+	float: left;
+	margin-top: 50px;
+	margin-right: 20px;
+}
+.informacoes-info2 .descricao-info{
+
+	font-size: 20px;
+	width: 170px;
+	border-left: none;
+	padding-left: 5px;
+}
+.descricao-info{
+	border: 1px solid black;
+	border-bottom: none;
+	font-size: 21px;
+	width: 290px;
+	border-collapse: collapse;
+	padding: 5px;
+	font-size: 20px;
+}
+.content-right-info{
+	width: 260px;
+	min-width: 150px;
+	float: left;
+	text-align:center;
+	margin: 13px 0px 0px 0px;
+}
+
+.content-right-info p{
+	font-size: 25px;
+	text-align: center;
+}
+.content-right-info img{
+	border-radius: 5px;
+	margin: 30px 0px 0px 10px;
+	width: 260px;
+	min-width: 150px;
+}
+
+/*-------------Fim Pop-Up--------------*/
+
+.grupo{ /*Números dos grupos*/
+	text-align: center;
+	font-size: 15px;
+	background-color: #cccbcb;
+	width: 82px;
+	min-width: 35px;
+	cursor: pointer;
+	padding: 2px;
+
+}
+.grupo:hover{ /*Aumenta a div com o número do grupo*/
+	transform: scale(1.2);
+	transition: 0.1s ease-in;
+	z-index: 1;
+	border-radius: 5px;
+	border:1px solid black;
+	margin-bottom: -2px;
+
+}
+.grupo:hover~ .elemento:not(.lantanideos):not(.actinidios){ /*destaca a coluna exceto lantanideios*/
+	background-color: white;
+	transition: 0.5s;
+}
+
+.grupoHover{
+	background-color: white !important;
+	transition: 0.5s;
+}
+.periodo{ /*Números dos períodos*/
+	text-align: center;
+	font-size: 15px;
+	background-color: #cccbcb;
+	width: 16px;
+	height: 77px;
+	min-height: 41px;
+	border: 1px solid rgba(255,255,255,0);
+	margin: 3px;
+	padding: 0px 2px 2px 2px;
+
+  }
+.periodo:first-child{ /*Números dos períodos*/
+	margin-top: 24px;
+  }
+.periodo:hover{
+	transform: scale(1.2);
+	transition: 0.1s ease-in;
+	border-radius: 5px;
+	border:1px solid black;
+}
+.coluna { /*Cada coluna da tabela periodica*/
+	float: left;
+	width: 82px;
+	min-width: 39px;
+
+}
+
+.elemento {/*Cada elemento da tabela periodica*/
+	max-width: 76px;
+	min-width: 30px;
+	height: 77px;
+	min-height: 41px;
+	border: 1px solid black;
+	margin: 3px;
+	border-radius: 2px;
+	padding: 0px 2px 2px 2px;
+
+}
+.elemento:hover{ /*Aumenta o elemento no hover*/
+	transform: scale(1.2);
+	transition: 0.24s ease-in;
+	cursor: pointer;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+.lantanideos:hover{
+	transform: scale(1.2);
+	transition: 0.24s ease-in;
+	cursor: pointer;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+
+}
+.actinidios:hover{
+	transform: scale(1.2);
+	transition: 0.24s ease-in;
+	cursor: pointer;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.numero { /*Número atômico de cada elemento*/
+	font-size: 13px;
+	margin: 0px 0px 0px 2px;
+	font-weight: bold;
+}
+
+.massa { /*Massa de cada elemento*/
+	float: right;
+	font-size: 12px;
+	margin-top:2px;
+}
+.massamenor{ /*Massa que aparece ao redimensionar (abaixo)*/
+	display: none;
+	font-size: 12px;
+	text-align: center;
+	margin-top: -2px;
+}
+.simbolo  {/*Letra do elemento: H, He, O.. */
+	text-align: center;
+	font-size: 25px;
+}
+.nome { /*Elemento por escrito: oxigênio, hidrogênio, etc...*/
+	font-size: 14px;
+	text-align: center;
+}
+.nomemaior{ /*Nomes maiores (Oganessonio..)*/
+	font-size: 0.8vw;
+}
+.numcoluna3{
+	font-size: 1.2vw;
+	margin-top: 1vw;
+	text-align: center;
+}
+
+/*Abaixo as divs que definem as cores na legenda e nos elementos:*/
+.naometais{
+	background-color: #5def68;
+}
+.gasesnobres{
+	background-color: #7dbffd;
+}
+.metaisalc{
+	background-color: #ffc630;
+}
+.metaisalcterrosos{
+	background-color: #f7f03d;
+}
+.semimetais{
+	background-color: #71e2ce;
+}
+.halogenos{
+	background-color: #a7def2;
+}
+.outrosmetais {
+	background-color: #97bbc4;
+}
+.metaistrans{
+	background-color: #ff6f7b;
+}
+.lantanideos{
+	background-color: #acf9f7;
+}
+.actinidios{
+	background-color: #d48df4;
+}
+
+/*-------------------Começa a legenda-------------*/
+.legendabox { /*div contendo toda a legenda*/
+	border:1px solid black;
+	border-top:none;
+	padding: 10px 0px 0px 20px;
+	max-width: 1450px;
+	margin: 0px auto 0px auto;
+	background-color: rgba(255,255,255,0.7);
+}
+
+.legendatitle{ /*título: LEGENDA*/
+	font-size: 3vh;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.elementolegenda{ /*explicação do elemento, quadrado maior*/
+	width: 140px;
+	height: 150px;
+	float: left;
+	margin: -30px 4vw 10px 0px;
+	border:1px solid black;
+	padding: 3px;
+	text-align: left;
+
+}
+.numerolegenda{
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 2px;
+}
+.massalegenda{
+	float: right;
+	font-size: 14px;
+	margin-top: 2px;
+}
+.simbololegenda{
+	text-align: center;
+	font-size: 30px;
+}
+.nomelegenda{
+	font-size: 15px;
+	text-align: center;
+}
+
+.legendatodoselementos{
+	width: 66vw;
+	max-width: 1200px;
+	display: inline-block;
+}
+.corlegenda{
+	width: 25px;
+	height: 25px;
+	border:1px solid black;
+	border-radius: 2px;
+	margin-right: 5px;
+}
+.conjuntolegenda {
+	width: 220px;
+	display: inline-block;
+}
+.conjuntolegenda div {
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 20px;
+}
+
+
+/*-----------------Fim legenda*-----------------*/
+
+/*TABELA RESPONSIVA*/
+
+@media only screen and (max-width: 1540px) {
+   .coluna, .grupo{
+    width: 5.25vw;
+  }}
+
+@media only screen and (max-width: 1420px) {
+   .massa{
+   display: none;
+  }}
+
+@media only screen and (max-width: 1420px) {
+   .massamenor{
+   display: block;
+  }}
+
+@media only screen and (max-width: 1300px) { /*Diminui a margem da tabela ao redimensionar*/
+   .elemento{
+  margin: 1px;
+  height: 5.3vw;
+  }}
+
+@media only screen and (max-width: 1300px) {
+   .periodo{
+  margin: 1px;
+  height: 5.29vw;
+  }}
+
+@media only screen and (max-width: 1300px) {
+   .simbolo{
+    font-size: 2.7vw!important;
+  }}
+
+@media only screen and (max-width: 1420px) {
+   .massalegenda{
+   margin:100px 0px 0px 50px;
+   position: absolute;
+   display: block;
+   text-align: center;
+  }}
+
+
+@media only screen and (max-width: 1300px) {/*Tira o nome e a massa dos elementos em telas menores*/
+   .massa, .nome, .massamenor{
+   display: none;
+  }}
+
+
+@media only screen and (max-width: 667px) {
+   .legendatodoselementos{
+    width: 100%;
+  }}
+@media only screen and (max-width: 667px) {
+   .elementolegenda{
+    display: none;
+  }}
+
+  @media only screen and (min-width: 1570px) {
+	.nomemaior{
+	font-size: 12.5px!important;
+	   }}
+ @media only screen and (max-width: 770px) {
+	.simbolo{
+	font-size: 18.9px!important;
+	 }}
+ @media only screen and (max-width: 1200px) {
+	.numcoluna3{
+	font-size: 15px!important;
+	 }}
+ @media only screen and (min-width: 1550px) {
+	.numcoluna3{
+	font-size: 20px !important;
+	 }}
+
+/* ----------------POP UP RESPONSIVO-------------------*/
+/* ----------------POP UP RESPONSIVO-------------------*/
+ @media only screen and (max-width: 1100px) {
+	.infoelemento{
+	width: 96%;
+	min-width: 700px;
+
+	 }}
+@media only screen and (max-width: 1100px) {
+	.titulo-info{
+	width: 93vw;
+	 }}
+@media only screen and (max-width: 1100px) {
+	.infoelemento>p{
+	margin-left: 37vw;
+	font-size: 2.6vh;
+	 }}
+
+@media only screen and (max-width: 1100px) {
+	.informacoes-info{
+	margin-left: 5px;
+	 }}
+
+@media only screen and (max-width: 1100px) {
+	.content-left-info p, .content-right-info p{
+	font-size: 2.4vw;
+	 }}
+@media only screen and (max-width: 700px) {
+	.content-left-info p, .content-right-info p{
+	font-size: 17px;
+	 }}
+ @media only screen and (max-width: 1100px) {
+	.content-left-info,  #atom-image-info{
+	width: 21vw;
+	 }}
+
+@media only screen and (max-width: 1100px) {
+	.content-right-info, #imagem-info{
+	width: 23.5vw;
+
+	 }}
+@media only screen and (max-width: 1100px) {
+	.content-right-info img{
+	margin-left: 0px;
+	margin-top: 10px;
+
+	 }}
+
+@media only screen and (max-width: 1100px) {
+	.descricao-info{
+	font-size: 2vw;
+	 }}
+@media only screen and (max-width: 700px) {
+	.descricao-info{
+	font-size:14px;
+	 }}
+
+@media only screen and (max-width: 1100px) {
+	.informacoes-info .descricao-info{
+	width: 25vw;
+	min-width: 200px;
+	 }}
+@media only screen and (max-width: 1100px) {
+	.informacoes-info2 .descricao-info{
+	width: 17vw;
+	 }}
+/*---------------------- FIM PAGINA QUIMICA---------------------------------- */
+
+
+
+/* ------------------------PAGINA BIOLOGIA----------------------------- */
+/* ------------------------PAGINA BIOLOGIA----------------------------- */
+.animalcell {
+	width: 50vw;
+	margin: 0 auto 3% auto;
+}
+.introducaobiologia {
+	width: 70vw;
+	margin: auto;
+}
+.tudobiologia {
+	/* width: 70vw; */
+	/* margin: auto; */
+	font-family: 'Roboto' !important;
+}
+ .bd-example {
+	margin: 70px 0;
+}
+
+.maphilight{
+	margin-left: auto;
+	margin-right: auto;
+	width: 80vw !important;
+}
+.popup p {
+	color: #363636;
+	line-height: 2em;
+	text-align: justify;
+}
+.introducaobiologia h1 {
+	margin-top: 7vh;
+	color: #363636;
+	font-size: 5vh !important;
+	text-align: center !important;
+}
+
+.popup h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+	color: #363636;
+	line-height: 3em;
+}
+.popup h1 {
+	font-size: 3vw !important;
+	margin-top: 1em;
+	text-align: center !important;
+}
+.popup h2 {
+	font-size: 2vw !important;
+}
+.popup h3 {
+	text-align: center !important;
+	margin-top: 3%;
+}
+.carousel-control-prev-icon {
+	background-image: url("./svg/left-arrow-key.svg") !important;
+}
+
+.carousel-control-next-icon {
+	background-image: url("./svg/keyboard-right-arrow-button.svg") !important;
+}
+.modal {
+	min-width: 70vw !important;
+	position: relative !important;
+	min-height: 100% !important;
+	height: initial !important;
+}
+.blocker {
+	z-index: 90 !important;
+}
+.carousel-caption {
+	bottom: -40px !important;
+}
+map a {
+	z-index: 99;
+	background-color: red;
+}
+@media only screen and (max-width: 450px){
+ .link1,
+ .link2,
+ .link3,
+ .link4{
+	 display: none!important;
+ }
+ .menudrop{
+	 display: block;
+ }
+}
+@media only screen and (max-width: 950px) {
+.link5{
+display: none!important;
+}
+.menul a{
+ width: 20vw;
+}
+}
+
+/* -------------FIM PAGINA BIOLOGIA------------------ */
+
+/*-------------------- PAGINA MATEMATICA------------ */
+.calc-head{
+	width: 480px;
+	margin: auto;
+}
+.calc-title{
+	font-size: 25px;
+	font-weight: bold;
+	font-family: 'Montserrat', sans-serif;
+	display: inline-block;
+	margin:auto;
+	vertical-align: middle;
+	margin-right: 20px;
+}
+.changeCalc{
+	border-radius: 5px;
+	padding: 5px;
+	font-family: 'Montserrat', sans-serif;
+	outline: none;
+}
+.calc-head label{
+	cursor: pointer;
+}
+	.calc-content{
+		margin-right: auto;
+		margin-left: auto;
+		height: 500px;
+		max-width: 870px;
+		border: 1px solid black;
+		background-color: #cfcfcf;
+		border-radius: 10px;
+		text-align: center;
+		margin-top: 20px;
+		padding: 30px 30px 0px 30px;
+		width: 490px;
+	}
+	#visor{
+		border-radius: 7px;
+		height: 60px;
+		padding: 0px 20px 20px 5px;
+		margin-bottom: 30px;
+		font-size: 40px;
+		font-family: 'Montserrat', sans-serif;
+		text-align: right;
+		background-color: white;
+		overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+		width: 430px;
+	}
+	.bloco1{
+		width: 320px;
+		float: left;
+		margin-right: 50px;
+		display: none;
+	}
+	.bloco2{
+		width: 420px;
+		float: left;
+	}
+	.tecla{
+		font-size: 21px !important;
+		font-family: 'Montserrat', sans-serif;
+		background-color: #8ff7e8;
+		display: inline-block;
+
+		width: 90px;
+		height: 60px;
+		padding-top: 13px!important;
+		margin: 5px;
+
+	}
+	.bloco2 div:nth-child(19){
+		font-size: 30px !important;
+		padding-top: 7px!important;
+	}
+	.bloco2 div:nth-child(19):active{
+		transition: 0s;
+		background-color: #10606d!important;
+	}
+	.bloco1 .tecla:active{
+		transition: 0s!important;
+		background-color: #3e4348!important;
+	}
+	.bloco2 .tecla:active{
+		transition: 0s!important;
+		background-color: #131517!important;
+
+	}
+
+/*------------FIM CALCULADORA------------*/
+
+#secondDegree{
+	margin-top: 20px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 24px;
+	margin: auto;
+	}
+#secondDegree h1{
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 24px;
+	}
+
+#secondDegree p{
+	height: 40px;
+	display: inline-block;
+	padding: 0px 3px 0px 3px;
+	margin: 0px 3px 0px 3px;
+	border: 1px solid black;
+	border-radius: 5px;
+	}
+#secondDegree div{ /*Div do resultado*/
+	margin-top: 10px;
+	padding: 3px;
+
+	}
+#secondDegreeResult1{
+	min-width: 50px;
+}
+#secondDegreeResult2{
+	min-width: 50px;
+}
+#secondDegree{
+	margin-top: 20px;
+	text-align: center;
+	width: 45%;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 24px;
+	}
+
+/* ----------FIM PAGINA MATEMATICA ---------------*/

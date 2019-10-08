@@ -1,0 +1,55 @@
+ var text = '{"data":[' +
+'{"numero":"0","imagem":"Não tem",                                  "titulo":"NÃO USE O VALOR 0 DO DATA.JSON",  "desc":"ESSA ORGANELA PROVAVELMENTE NÃO EXISTE NO RESTO DO DATA, verifique o index de problemas"},' +
+
+'{"numero":"1","imagem":"./imagem/Nucleo-celular.png",               "titulo":"Núcleo",                        "desc":"<h2>Nucléolo</h2><p>A carioteca é também conhecida como envoltório nuclear ou envelope nuclear. É aquela membrana que serve como um limite entre o citoplasma celular e o núcleo da célula. Encontramos a carioteca somente em células eucariontes.</p><h2>Poros Nucleares</h2><p>Os poros nucleares são grandes complexos de proteínas que atravessam a carioteca, uma membrana dupla que existe ao redor do núcleo das células eucariontes.</p>"},' +
+
+'{"numero":"2","imagem":"./imagem/Nucleo-celular.png",               "titulo":"Nucleo",                          "desc":"<p>Armazena Dna e Rna</br>Sistese de Rna</p>" },' +
+
+'{"numero":"3","imagem":"./imagem/ribossomo.png",                    "titulo":"Ribossomos",                      "desc":"<p>Sístese de proteínas</br>Fundamentais para o crescimento da célula,a regeneração celular e o controle metabólico</p>" },' +
+
+'{"numero":"4","imagem":"./imagem/peroxissomo.png",                  "titulo":"Peroxissomo",                     "desc":"<p>Presença de enzimas oxidases e catalases;</br>Funções:</br>– Oxidação de lipídios, aminoácidos, álcool, dentre outros;</p>" },' +
+
+'{"numero":"5","imagem":"./imagem/reticulo-endoplasmatico-rugoso.png","titulo":"Retículo endoplasmático rugoso",  "desc":"<p> Síntese de proteínas;</br> Transporte de material dentro da célula;</p>" },' +
+
+'{"numero":"6","imagem":"./imagem/reticulo-endoplasmatico-liso.png",  "titulo":"Retículo endoplasmático liso",    "desc":"<p> Síntese de lipídios e esteroides (como colesterol);</br> Inativação de substâncias nocivas, como pesticidas e o álcool;</br> Transporte de substâncias dentro da célula;</p>" },' +
+
+'{"numero":"7","imagem":"./imagem/complexo-de-golgi.jpg",            "titulo":"Complexo de golgi",               "desc":"<p> Síntese de carboidratos;</br> Armazenamento e eliminação de secreções (secreção celular)</br> Produção de muco, do acrossomo de espermatozoides e dos lisossomos;</p>" },' +
+
+'{"numero":"8","imagem":"./imagem/flagelo.png",                      "titulo":"Flagelos",                        "desc":"<p>Projeções poucas e longas;</br>Formados por microtúbulos;</p>" },' +
+
+'{"numero":"9","imagem":"./imagem/mitocondria.jpg",                "titulo":"Mitocôndria",                     "desc":"<p>Responsáveis pela respiração celular e produção de energia.</br>Abundantes em células que utilizam bastante energia.</p>" },' +
+
+'{"numero":"10","imagem":"./imagem/vacuolo-digestivo-autofagico.png","titulo":"Lisossomos",                      "desc":"<p>Produzidos a partir do complexo de Golgi; Digestão intracelular;</br> Contêm aproximadamente 40 diferentes enzimas, ativas em pH 4,8(citoplasma tem pH neutro);</br> Função autofágica: digestão de partes da própria célula</br> Responsáveis pela regressão da cauda de girinos, do útero no pós-parto e pela reciclagem de organelas velhas;</br> Função heterofágica: digestão de materiais capturados por fagocitose epinocitose;</p>" },' +
+
+'{"numero":"11","imagem":"./imagem/citoplasma.png",                  "titulo":"Citoplasma",                      "desc":"<p>Se localiza entre a membrana plasmática e o núcleo da célula</br>Tem um aspecto gelatinoso formado basicamente por água,cerca de 80% de sua totalidade</p>" },' +
+
+'{"numero":"12","imagem":"./imagem/centriolo.png",                   "titulo":"Centríolo",                       "desc":"<p>Cilindro oco contendo 9 conjuntos de três microtúbulos unidos por proteínas adesivas;</br>auxiliam na divisão celular;</br>originam cílios e flagelos, pela extensão de seus microtúbulos;</p>" },' +
+
+'{"numero":"13","imagem":"./imagem/membrana-plasmatica.jpg",       "titulo":"Membrana plasmática",             "desc":"<p>•Responsável por separar o interior da célula com o meio externo</br>•Funcões:</br>-Permeabilidade seletiva e reconhecimento e sinalização das células</p>" },' +
+//CELULA VEGETAL
+'{"numero":"14","imagem":"./imagem/cloroplastos.png",                "titulo":"Cloroplasto",                     "desc":"<p>Responsável pela fotossintese </br>Da cor verde a célula,devido ao pigmento clorofila</p>" },'+
+
+'{"numero":"15","imagem":"./imagem/vacuolo-digestivo.png",           "titulo":"Vacúola",                         "desc":"<p>Estruturs delimitadas por uma membrana (tonoplasto).</br>Podem armazenar nutrientes, sais, enzimas, resíduos do metabolismo, toxinas, pigmentos hidrossolúveis, nicotina, taninos …</br>Função também similar aos lisossomos;</br>Responsáveis pela coloração azul, violeta, vermelha e púrpura de flores e folhas;</p>" },'+
+
+'{"numero":"16","imagem":"./imagem/parede-celular.png",              "titulo":"Parede celular",                  "desc":"<p>Confere rigidez e sustentação esquelética</p>" },'+
+
+'{"numero":"17","imagem":"./imagem/citoesqueleto.png",               "titulo":"Microtúbulo",                     "desc":"<p>Microtúbulos são estruturas proteicas que fazem parte do citoesqueleto nas células</p>" },'+
+
+'{"numero":"18","imagem":"./imagem/citoesqueleto.png",               "titulo":"Citoesqueleto",                   "desc":"<p>Constituído de túbulos (microtúbulos) e filamentos (filamentos intermediários e microfilamentos) proteicos;</br>Funções:</br>– define a forma e organiza a estrutura interna da célula;</br>– permite a adesão da célula às vizinhas;</br>– possibilita o deslocamento de materiais dentro da célula;</br>– responsável pelo movimento ameboide, ciclose, contração muscular,movimentação dos cromossomos na divisão celular, movimento decílios e flagelos;</p>" },'+
+
+//BACTERIA
+
+'{"numero":"19","imagem":"./imagem/pilus.png",                       "titulo":"Pilus",                           "desc":"<p>São microfibrilas proteicas que se estendem da parede celular em muitas espécies</br>Função:</br>-Ancoramento da bactéria ao seu meio e são importantes na patogênese</p>" },'+
+
+'{"numero":"20","imagem":"./imagem/capsula.png",                     "titulo":"Capsula",                         "desc":"<p>E uma camada rígida com bordas bem definida,formada por polímeros orgânicos</br>Se localiza no exterior da parede celular bacteriana.</p>" },'+
+
+'{"numero":"21","imagem":"./imagem/nucleiode.png",                   "titulo":"Nucleoide",                       "desc":"<p>Não possui um núcleo definido,logo,seu material genético fica disperso pelo citoplasma.</br>•No nucleoide se encontra o material genético</p>" }]}';
+
+function conteudo(i){
+obj = JSON.parse(text);
+document.getElementById("titulo").innerHTML =
+obj.data[i].titulo ;
+document.getElementById("desc").innerHTML =
+obj.data[i].desc;
+document.getElementById("image").src= obj.data[i].imagem
+}
